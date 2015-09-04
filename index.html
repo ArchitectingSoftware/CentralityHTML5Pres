@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Centrality in Software Engineering</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -13,8 +13,10 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="css/bootstrap.css">
 
-		<link rel="stylesheet" href="css/reveal.css">
+
+        <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
@@ -32,14 +34,903 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		<link rel="stylesheet" href="css/custom-presentation.css">
+
 	</head>
 
-	<body>
 
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+                <section data-background="img/headache.jpg">
+                    <h1 style="color:black; width:1000px; text-transform:none" class="blackandwhite"><strong>
+                        Getting Hangover Headaches Trying to Understand Complex System Structures!</strong>
+                    </h1>
+                    <h3 data-background-color="black"> Try Graph Centrality Algorithms as a Cure!</h3>
+                    <p>
+                        <small>Created by <a href="http://www.cs.drexel.edu/~bmitchell">Brian Mitchell</a> / <a href="http://twitter.com/hakimel">@DrBrianMitchell</a></small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>History of Centrality</h2>
+                    <img style="border:none" width="800" src="img/CentralityHistory.png"/>
+                </section>
+
+                <section>
+					<section>
+						<h1>Math Review</h1>
+					</section>
+					<section>
+						<h3>Relations</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p style="text-align:left">
+									A relation is a mapping from values in the domain to the range.
+									<ul>
+										<li>
+											The elements in domain and range must be defined, in this case $\mathbb{R}$
+										</li>
+										<li>
+											The relation $R$ is defined as $R \subset R \times R$
+										</li>
+									</ul>
+								</p>
+							</div>
+							<div class="col-lg-6">
+								<img src="img/MathRelation.jpg"/>
+							</div>
+						</div>
+					</section>
+					<section data-background="#dddddd">
+						<h3 style="width:1100px">Algebra review, lets consider a function, which is a special form of a relation</h3>
+						<div class="row">
+							<div class="col-lg-6" style="font-size:smaller">
+								<p style="text-align:left">
+									Functions uniqulely map values from the domain to the range
+								</p>
+								<p style="text-align:left">
+									Conisider the general form of a linear function:
+								</p>
+								$f(x) = ax + b$
+								<p style="text-align:left">
+									So solutions for $f(x)=2x$ fall on a line (shown in green) on right
+								</p>
+							</div>
+							<div class="col-lg-6">
+								<img style="border:none" width="400" src="img/function.jpg"/>
+							</div>
+						</div>
+						<div class="row" style="font-size:smaller">
+							In this case we can also see solutions lie on the $\vec{(0,2)}$ vector
+						</div>
+                	</section>
+					<section>
+						<h3>Now Vectors</h3>
+						<img src="img/vectors.jpg" width="800"/>
+						<p>
+							A vector is a line in an N-Dimentional space
+						</p>
+					</section>
+				</section>
+
+                <section>
+                    <h2>title 1 b c d e f g h i j k l m n o p q r s t u v w x y z</h2>
+                    <div class="row">
+                        <div class="col-lg-6" style="text-align:left">
+                            <p>col 1 1 b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+                        </div>
+                        <div class="col-lg-6" style="text-align:left">
+                            <p>col2 2 b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>footer 1 b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>What is a Graph?</h2>
+                    <p>
+                        $G=[V,E]$
+
+                    </p>
+                </section>
+                <section>
+                    <h2>Social Network</h2>
+                    <img src="img/FacebookGraph.png" />
+                </section>
+                <section>
+                    <h2>Internet Graph</h2>
+                    <img src="img/InternetGraph.png" />
+                </section>
+                <section>
+                    <h2>Internet Graph (art)</h2>
+                    <img src="img/InternetGraphArt.jpg" />
+                </section>
+
+
+                <section data-background="#dddddd">
+                    <h3>So which node is most impportant?</h3>
+                    <p>
+                        <img style="background:transparent; border:none; box-shadow:none;" src="img/bunch2.svg"/>
+                    </p>
+                </section>
+
+				<section data-background="#dddddd">
+					<h3>So which node is most impportant?</h3>
+					<p>
+						<embed id="bunch-graph" style="width: 500px; height: 500px; border:1px solid black;" type="image/svg+xml" src="img/bunch2.svg" />
+
+					</p>
+				</section>
+
+
+                <section>
+                    <h1>Reveal.js</h1>
+                    <h3>The HTML Presentation Framework</h3>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>foo</li>
+                            <li>foo</li>
+                            <li>foo</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6"><img src="img/bunch2.jpg"/></div>
+                </section>
+                <section>
+                    <h1>Math Slide</h1>
+                    <p>Math Formula</p>
+                    <img style="float:right; background: transparent" height="200" width="200" src="img/g1.svg"/>
+                    <p>$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$</p>
+                </section>
+
+				<!-- Linear Transformations -->
+				<section>
+					<section>
+						<h1>Linear Transformations</h1>
+					</section>
+					<section>
+						<h3>Before we start a brief review of matrix multiplication</h3>
+						<p style="text-align:left">This is how to multiply a 2x2 matrix with a 1x2 vector:</p>
+						<p>
+							$
+							\begin{bmatrix}a & b \\ c & d \end{bmatrix}
+							\begin{bmatrix}I\\S\end{bmatrix} =
+							\begin{bmatrix} aI + bS \\ cI + dS \end{bmatrix}
+							$
+						</p>
+						<p style="text-align:left">
+							For the purposes of this talk we will be focusing on square matricies [NxN] multiplied by
+							[1xN] vectors.  The resultant answer will always be a [1xN] vector
+						</p>
+					</section>
+					<section>
+						<h3>Examples</h3>
+						<p style="text-align:left">Example 1:</p>
+						<p>
+							$
+							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+							\begin{bmatrix}2\\-5\end{bmatrix} =
+							\begin{bmatrix} 4 - 10 \\ 10 + 5 \end{bmatrix} =
+							\begin{bmatrix} -6 \\ 15 \end{bmatrix}
+							$
+						</p>
+						<p></p>
+						<p style="text-align:left">Example 2:</p>
+						<p>
+							$
+							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+							\begin{bmatrix}1\\1\end{bmatrix} =
+							\begin{bmatrix} 2+2 \\ 5-1 \end{bmatrix} =
+							\begin{bmatrix} 4 \\ 4 \end{bmatrix}
+							$
+						</p>
+						<p>
+							Anybody notice anything special?  More on this later
+						</p>
+					</section>
+					<section>
+						<h3>Rotation</h3>
+						<p>
+							$
+								\begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}
+								\begin{bmatrix}x\\y\end{bmatrix} =
+								\begin{bmatrix}x' = x \cos(\theta)-y \sin(\theta)\\y' = x \sin(\theta)+y \cos(\theta)\end{bmatrix}
+							$
+						</p>
+						<p>
+							In other words, point [x,y] is transformed to point [x',y'] via a rotation of $\theta$ degrees.
+							Rotation is counter-clockwise if $\theta > 0$ and clockwise if $\theta < 0$
+						</p>
+						<img src="img/rotate_transform.gif"/>
+					</section>
+					<section> <!-- reflection -->
+						<h3>Reflection</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} 1  & 0 \\ 0 & -1 \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}x\\-y\end{bmatrix}
+									$
+								</small></p>
+								<p>Reflects on y axis</p>
+							</div>
+
+							<div class="col-lg-6">
+								<img align="right" src="img/reflection_transform.gif"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} -1  & 0 \\ 0 & 1 \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}x\\-y\end{bmatrix}
+									$
+								</small></p>
+								<p>Reflects on x axis</p>
+							</div>
+							<div class="col-lg-6">
+								<img align="right" src="img/reflection2_transform.gif"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} 0  & 1 \\ 1 & 0 \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}x\\-y\end{bmatrix}
+									$
+								</small></p>
+								<p>Reflects in place</p>
+							</div>
+							<div class="col-lg-6">
+								<img align="right" src="img/reflection3_transform.gif"/>
+							</div>
+						</div>
+					</section>
+
+					<section> <!-- shear -->
+						<h3>Shear</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} 1  & k \\ 0 & 1 \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}x+ky\\y\end{bmatrix}
+									$
+								</small></p>
+								<p>shears in x direction by k units</p>
+							</div>
+
+							<div class="col-lg-6">
+								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/shear1_transform.gif"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} 1  & 0 \\ k & 1 \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}x\\y+kx\end{bmatrix}
+									$
+								</small></p>
+								<p>shears in x direction by k units</p>
+							</div>
+							<div class="col-lg-6">
+								<img style="max-width:100%; max-height:100%;" align="right" src="img/shear2_transform.gif"/>
+							</div>
+						</div>
+					</section>
+
+					<section> <!-- stretch -->
+						<h3>Stretch</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} k  & 0 \\ 0 & 1 \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}kx\\y\end{bmatrix}
+									$
+								</small></p>
+								<p>stretches in x direction by k units</p>
+							</div>
+
+							<div class="col-lg-6">
+								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchx_transform.gif"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} 1  & 0 \\ 0 & k \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}x\\ky\end{bmatrix}
+									$
+								</small></p>
+								<p>stretches in y direction by k units</p>
+							</div>
+							<div class="col-lg-6">
+								<img style="max-width:100%; max-height:100%;" align="right" src="img/stretchy_transform.gif"/>
+							</div>
+						</div>
+					</section>
+
+					<section> <!-- stretch -->
+						<h3>Stretch (2)</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}kx\\ky\end{bmatrix}
+									$
+								</small></p>
+								<p style="text-align:left">stretches in both directions by k units</p>
+							</div>
+
+							<div class="col-lg-6">
+								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchxy_transform.jpg"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<p>
+									What is interesting here is that this transform does not distort the image in any way, it
+									simply scales it by a factor of $k$.
+								</p>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- explain eigenvectors -->
+				<section>
+					<section>
+						<h1>Now with this knowledge we can get to Eigenvectors (and Eigenvalues)</h1>
+					</section>
+					<section>
+					  <!-- stretch -->
+						<h3>Geometrically visualizing Eigenvalues and Eigenvectors</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p><small>
+									$
+									\begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									\begin{bmatrix}kx\\ky\end{bmatrix}
+									$
+								</small></p>
+								<p style="text-align:left">stretches in both directions by k units</p>
+							</div>
+
+							<div class="col-lg-6">
+								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchxy_transform.jpg"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<p>
+									Lets rewrite the equation sligthly by pulling out $k$:
+								</p>
+								<p><small>
+									$
+									\begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
+									\begin{bmatrix}x\\y\end{bmatrix} =
+									k \begin{bmatrix}x\\y\end{bmatrix}
+									$
+								</small></p>
+								<p>
+									In this form $k$ is the eigenvalue, and $[x,y]$ is an eigenvector.  In other words an
+									eigenvector scales the information ecapsulated in a given square matrix by a factor of $k$
+								</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h1>So why is this so interesting?</h1>
+					</section>
+					<section>
+						<h3>Lets look at the equation for determinnig an eigenvector</h3>
+						<p></p>
+						<p>
+							$A \vec{v} = \lambda \vec{v} $
+						</p>
+						<p>
+							So given a square matrix $A$ and a vector $\vec{v}$ we need to dermine if such a $\vec{v}$
+							exists that soles this equation.  If so, $\lambda$ is the eigenvector that scales $\vec{v}$
+							which is the eigenvector.
+						</p>
+					</section>
+					<section>
+						<h3>Recall our Matrix Multiplication Example</h3>
+						<p style="text-align:left">Example 1:</p>
+						<p>
+							$
+							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+							\begin{bmatrix}2\\-5\end{bmatrix} =
+							\begin{bmatrix} 4 - 10 \\ 10 + 5 \end{bmatrix} =
+							\begin{bmatrix} -6 \\ 15 \end{bmatrix} =
+							-3 \begin{bmatrix} 2 \\ -5 \end{bmatrix}
+							$
+						</p>
+						<p></p>
+						<p style="text-align:left">Example 2:</p>
+						<p>
+							$
+							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+							\begin{bmatrix}1\\1\end{bmatrix} =
+							\begin{bmatrix} 2+2 \\ 5-1 \end{bmatrix} =
+							\begin{bmatrix} 4 \\ 4 \end{bmatrix} =
+							4 \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+							$
+						</p>
+						<p>
+							So in this case [2,-5] and [1,1] are eigenvectors with eigenalues of -3 and 4 respectively
+						</p>
+					</section>
+					<section>
+						<h3>So this is kind of cool</h3>
+						<h5>The "information" in the matrix is stretched but does not fundementally change</h5>
+						<div class="row">
+							<div class="col-lg-6" style="text-align:left">
+								<p style="vertical-align:center">
+									The best way to think about this is that Eigenvectors help you compress information
+									in an [N x N] dimentional space, into a [1 x N] dementional space
+								</p>
+							</div>
+							<div class="col-lg-6">
+								<img src="img/Eigenvectors-extended.gif" width="500"/>
+							</div>
+						</div>
+
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Graph Notation</h2>
+					</section>
+					<section>
+						<h3>Graphs</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>Graph</p>
+								<img src="img/sample_graph.svg"/>
+							</div>
+							<div class="col-lg-6">
+								<p style="font-size:smaller">Notation</p>
+								<p></p>
+								<p style="font-size:smaller">
+									<ul>
+										<li>$G=(V,E)$ </li>
+										<li>$V = \{v_{\tiny l} \mid v_{\tiny l} \in V, 1 \leq l \leq |V|\}$</li>
+                                        <li>$E = \{e_{\tiny i} = \{u,v\} \mid e_{\tiny i} \in E \land u,v \in V\}$</li>
+                                        <li>$deg(v) =  \{|\{v,e\}| \mid \forall \{v,e_{\tiny i}\}\in E \land e_{\tiny i} \in V\}$</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+					</section>
+                    <section>
+                        <h3>Graphs</h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Graph</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-8">
+                                <p style="font-size:smaller">Notation</p>
+                                <p></p>
+                                <p style="font-size:smaller">
+                                <ul>
+                                    <li>$G=(V,E)$ </li>
+                                    <li>$V = \{A, B, C, D, E\}$</li>
+                                    <li>$E = \{(A,B),(B,C),(C,D),(C,E),(D,F),(E,F)\}$</li>
+                                    <li>$deg(A)=1$</li>
+                                    <li>$deg(B,D,E,F)=2$</li>
+                                    <li>$deg(C)=3$</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Graphs</h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Undirected Graph</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Directed Graph</p>
+                                <img src="img/directed_sample.svg"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Directed Weighted Graph</p>
+                                <img src="img/directed_weighted_sample.svg"/>
+                            </div>
+                        </div>
+                    </section>
+				</section>
+
+
+                <section>
+                    <h3>We saw this guy before...</h3>
+                    <h4>Which node do you think is most influential?</h4>
+                    <h4>Which node do you think is least influential?</h4>
+                    <img src="img/directed_sample.svg"/>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Degree Centrality</h1>
+                    </section>
+                    <section>
+                        <h3>Degree Centrality</h3>
+                        <p>Measure the degree of each node</p>
+                        <img src="img/directed_sample.svg"/>
+                        <p>Degree Centrality = $[2,4,3,2,3]$.  So node B is the most influential!</p>
+                    </section>
+                    <section>
+                        <h3>Degree Centrality - Variation  - Normalize</h3>
+                        <p>Divide by max number of Nodes (N-1)</p>
+                        <img src="img/directed_sample.svg"/>
+                        <p>Degree Centrality = $[\frac{1}{2},1,\frac{3}{4},\frac{1}{2},\frac{3}{4}]$.  So node B is the most influential!</p>
+                    </section>
+                    <section>
+                        <h3>Degree Centrality - Centrality of Entire Network</h3>
+
+                        <div class="row">
+                            <div class="col-lg-6"><img src="img/directed_sample.svg"/></div>
+                            <div class="center-block text-center col-lg-6">
+                                <p>
+                                    $C_D =\frac{\sum_{i=1}^{N} [C_D(n^{*})-C_D(i)]}{[(N-1)(N-2)]}$
+                                </p>
+                                <p>
+                                    $C_D =\frac{(4-2)+(4-4)+(4-3)+(4-2)+(4-3)}{5 \times 4}$
+                                </p>
+                                <p>
+                                    $C_D =\frac{2+0+1+2+1}{20}$
+                                </p>
+                                <p>
+                                    $C_D =\frac{6}{20}$
+                                </p>
+                                <p>
+                                    $C_D = 0.3$
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row"><p style="font-size:smaller">
+                            where $C_D(n^{*})$ is the maximum degree centrality and $[(N-1)(N-2)]$ represents
+                            the maximum number of ways that the nodes in the graph can be connected
+                        </p></div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Closeness Centrality</h1>
+                    </section>
+                    <section>
+                        <h3>Closeness Centrality</h3>
+
+                        <div class="row">
+                            <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
+                            <div class="center-block text-center col-lg-8" style="font-size:smaller">
+                                <p style="text-align:left">Goal is to guage centrality based on how close nodes are to each other based on distance</p>
+                                <ul>
+                                    <li>
+                                        A <strong>path</strong> is a set of links connecting 2 nodes
+                                    </li>
+                                    <li>
+                                        A <strong> shortest path</strong> is a set a path between 2 nodes with shortest distance
+                                    </li>
+                                    <li>
+                                        The <strong>diameter</strong> of a graph is the maximum shortest path length between all node pairs
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Closeness Centrality</h3>
+                        <div class="row">
+                            <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
+                            <div class="center-block text-center col-lg-8" style="font-size:smaller">
+                                <p style="text-align:left">Example: Paths from (A -> F)</p>
+                                <ul>
+                                    <li>
+                                        A -> B -> C -> D -> E -> F [length:5]
+                                    </li>
+                                    <li>
+                                        A -> B -> C -> E -> D -> F [length:5]
+                                    </li>
+                                    <li>
+                                        A -> B -> C -> D -> F [length:4]
+                                    </li>
+                                    <li>
+                                        A -> B -> C -> E -> F [length:4]
+                                    </li>
+                                </ul>
+                                <p style="text-align:left">
+                                    All 4 are paths from A->F, the last 2 are shortest paths
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Closeness Centrality</h3>
+                        <div class="row">
+                            <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
+                            <div class="center-block text-center col-lg-8" style="font-size:smaller">
+                                <p style="text-align:left">Closeness Centrality is Calculated as Follows</p>
+                                <p>
+                                    $C(x) = \left[\frac{\sum_{y, y \neq x}d(x,y)}{N-1}\right]^{-1}$
+                                </p>
+                                <p style="font-size:smaller">
+                                    In other words the inverse of the average minimum distance from a node to
+                                    all other nodes
+                                </p>
+                                <p style="font-size:smaller;text-align:left">
+                                    For example:
+                                </p>
+                                <p>
+                                    $
+                                        C(A) = \left[\frac{1+2+3+3+4}{5}\right]^{-1} =
+                                        \left[\frac{13}{5}\right]^{-1} =
+                                        \frac{5}{13} = 0.385
+                                    $
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Closeness Centrality</h3>
+                        <div class="row">
+                            <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
+                            <div class="center-block text-center col-lg-8" style="font-size:smaller">
+                                <p style="text-align:left">Closeness Centrality is Calculated as Follows</p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(A) = \left[\frac{1+2+3+3+4}{5}\right]^{-1} =
+                                    \left[\frac{13}{5}\right]^{-1} =
+                                    \frac{5}{13} = 0.385
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(B) = \left[\frac{1+1+2+2+3}{5}\right]^{-1} =
+                                    \left[\frac{9}{5}\right]^{-1} =
+                                    \frac{5}{9} = 0.556
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(C) = \left[\frac{2+1+1+1+2}{5}\right]^{-1} =
+                                    \left[\frac{7}{5}\right]^{-1} =
+                                    \frac{5}{7} = 0.714
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(D) = \left[\frac{3+2+1+1+1}{5}\right]^{-1} =
+                                    \left[\frac{8}{5}\right]^{-1} =
+                                    \frac{5}{8} = 0.625
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(E) = \left[\frac{3+2+1+1+1}{5}\right]^{-1} =
+                                    \left[\frac{8}{5}\right]^{-1} =
+                                    \frac{5}{8} = 0.625
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(F) = \left[\frac{4+3+2+1+1}{5}\right]^{-1} =
+                                    \left[\frac{11}{5}\right]^{-1} =
+                                    \frac{5}{11} = 0.455
+                                    $
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                So solution is: [C, D, E, B, F, A]
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Closeness Centrality - Variation</h3>
+                        <div class="row">
+                            <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
+                            <div class="center-block text-center col-lg-8" style="font-size:smaller">
+                                <p style="text-align:left">Closeness Centrality is Calculated as Follows</p>
+								<p>
+									$C(x) = \left[\frac{1}{\sum_{y, y \neq x}d(x,y)}\right]$
+								</p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(A) = \left[\frac{1}{1+2+3+3+4}\right] =
+                                    \frac{1}{13} = 0.077
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(B) = \left[\frac{1}{1+1+2+2+3}\right] =
+                                    \frac{1}{9} = 0.111
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(C) = \left[\frac{1}{2+1+1+1+2}\right] =
+                                    \frac{1}{7} = 0.143
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(D) = \left[\frac{1}{3+2+1+1+1}\right] =
+                                    \frac{1}{8} = 0.125
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(E) = \left[\frac{1}{3+2+1+1+1}\right] =
+                                    \frac{1}{8} = 0.125
+                                    $
+                                </p>
+                                <p style="font-size:smaller">
+                                    $
+                                    C(F) = \left[\frac{1}{4+3+2+1+1}\right] =
+                                    \frac{1}{11} = 0.091
+                                    $
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                So solution is: [C, D, E, B, F, A]
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+
+				<section>
+					<section>
+						<h2>Intuition for Page Rank</h2>
+					</section>
+					<section>
+						<h3>Directed Graph Example</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>Graph</p>
+								<img src="img/directed_sample.svg"/>
+							</div>
+							<div class="col-lg-6">
+								<p style="font-size:smaller">Adjacency Matrix (x:From, y:To)</p>
+								<p></p>
+								<p>
+									$
+										\begin{bmatrix}
+											0 & 0 & 1 & 0 & 0 \\
+											1 & 0 & 0 & 1 & 0 \\
+											0 & 1 & 0 & 0 & 1 \\
+											0 & 0 & 0 & 0 & 1 \\
+											0 & 1 & 0 & 0 & 0
+										\end{bmatrix}
+									$
+								</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Directed Graph Example - Eigenvectors</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>Graph</p>
+								<img src="img/directed_sample.svg"/>
+							</div>
+							<div class="col-lg-6">
+								<p style="font-size:smaller">Eigenvalues / Eigenvectors</p>
+								<p></p>
+								<p>Largest Eigenvalue: 1.395</p>
+								<p>
+									$
+									\begin{bmatrix}
+									A: 0.437 \\
+									B: 0.496 \\
+									C: 0.610 \\
+									D: 0.255 \\
+									E: 0.355
+									\end{bmatrix}
+									$
+								</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<p style="text-size:smaller">
+									We see that the relitive ranking is $[C,B,A,E,D]$ - seems to make sense,
+									but $B$ does look a little more central / important (to me at least)
+								</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Directed Graph Example - Transition Matrix</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>Graph</p>
+								<img src="img/directed_sample.svg"/>
+							</div>
+							<div class="col-lg-6">
+								<p style="font-size:smaller">Adjacency Matrix (x:From, y:To)</p>
+								<p></p>
+								<p>
+									$
+									\begin{bmatrix}
+									0 & 0 & 1 & 0 & 0 \\
+									1 & 0 & 0 & 1 & 0 \\
+									0 & \frac{1}{2}  & 0 & 0 & \frac{1}{2}  \\
+									0 & 0 & 0 & 0 & \frac{1}{2}  \\
+									0 & \frac{1}{2}  & 0 & 0 & 0
+									\end{bmatrix}
+									$
+								</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Directed Graph Example - Eigenvectors</h3>
+						<div class="row">
+							<div class="col-lg-6">
+								<p>Graph</p>
+								<img src="img/directed_sample.svg"/>
+							</div>
+							<div class="col-lg-6">
+								<p style="font-size:smaller">Eigenvalues / Eigenvectors</p>
+								<p></p>
+								<p>Largest Eigenvalue: 1.0</p>
+								<p>
+									$
+									\begin{bmatrix}
+									A: 0.480 \\
+									B: 0.641 \\
+									C: 0.480 \\
+									D: 0.160 \\
+									E: 0.320
+									\end{bmatrix}
+									$
+								</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<p style="text-size:smaller">
+									We see that the relitave ranking is now $[B,C,A,E,D]$ - makes more sense
+									$B$ seems more central, the rest of the ranking orders are the same
+								</p>
+							</div>
+						</div>
+					</section>
+				</section>
+
+
+				
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
@@ -382,6 +1273,8 @@ Reveal.addEventListener( 'customevent', function() {
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
+
+
 		<script>
 
 			// Full list of configuration options available at:
@@ -392,7 +1285,13 @@ Reveal.addEventListener( 'customevent', function() {
 				history: true,
 				center: true,
 
+
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                math: {
+                    mathjax: 'js/MathJax/MathJax.js', //http://cdn.mathjax.org/mathjax/latest/MathJax.js', //http://cdn.mathjax.org/mathjax/latest/MathJax.js
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                },
 
 				// Optional reveal.js plugins
 				dependencies: [
@@ -401,9 +1300,12 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/math/math.js', async: true }
 				]
 			});
+
+
 
 		</script>
 
