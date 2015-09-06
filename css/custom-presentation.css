@@ -1,8 +1,112 @@
-.blackandwhite{
+.blackandyellow{
     font-family: 'Courgette';
     font-size:3em;
     color: black;
     text-align: center;
     -webkit-text-fill-color: yellow;
     -webkit-text-stroke: 2px black;
+}
+
+.blackandred{
+    font-family: 'Courgette';
+    font-size:3em;
+    color: black;
+    text-align: center;
+    -webkit-text-fill-color: red;
+    -webkit-text-stroke: 2px black;
+}
+
+.blackandgreen{
+    font-family: 'Courgette';
+    font-size:3em;
+    font-weight:bold;
+    color: black;
+    text-align: center;
+    -webkit-text-fill-color:lawngreen;
+    -webkit-text-stroke: 2px black;
+}
+.magentaandwhite{
+    font-family: 'Courgette';
+    font-size:3em;
+    font-weight:bold;
+    color: black;
+    text-align: center;
+    -webkit-text-fill-color:black;
+    -webkit-text-stroke: 2px white;
+}
+
+
+.vcenter{
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+}
+.text-black{
+    color:black;
+    font-weight:inherit;
+}
+
+.text-black-bold{
+    color:black;
+    font-weight:900;
+}
+
+.text-black-arial-bold{
+    color:black;
+    font-family:'Arial Bold';
+    text-shadow:green;
+    font-weight:900;
+}
+
+.text-green{
+    color:lawngreen;
+    font-weight:inherit;
+}
+.text-green-bold{
+    color:lawngreen;
+    font-weight:inherit;
+}
+
+.text-yellow{
+    color:yellow;
+    font-weight:inherit;
+}
+.text-yellow-bold{
+    color:yellow;
+    font-weight:inherit;
+}
+.text-red{
+    color:red;
+    font-weight:inherit;
+}
+.text-red-bold{
+    color:red;
+    font-weight:inherit;
+}
+.text-red-bold-strike{
+    color:red;
+    font-weight:inherit;
+    text-decoration: line-through;
+}
+
+.text-blue{
+    color:deepskyblue;
+    font-weight:inherit;
+}
+.text-blue-bold{
+    color:blue;
+    font-weight:bold;
+    font-weight:inherit;
+}
+.text-magenta{
+    color: magenta;
+    font-weight:inherit;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
