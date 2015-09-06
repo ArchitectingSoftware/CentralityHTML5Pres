@@ -44,83 +44,319 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
                 <section data-background="img/headache.jpg">
-                    <h1 style="color:black; width:1000px; text-transform:none" class="blackandwhite"><strong>
+                    <h1 style="color:black; width:1000px; text-transform:none" class="blackandyellow"><strong>
                         Getting Hangover Headaches Trying to Understand Complex System Structures!</strong>
                     </h1>
-                    <h3 data-background-color="black"> Try Graph Centrality Algorithms as a Cure!</h3>
-                    <p>
-                        <small>Created by <a href="http://www.cs.drexel.edu/~bmitchell">Brian Mitchell</a> / <a href="http://twitter.com/hakimel">@DrBrianMitchell</a></small>
+                    <h3 data-background-color="black" class="blackandgreen"> Try Graph Centrality Algorithms as a Cure!</h3>
+                    <p class="magentaandwhite">
+
+                            Created by
+                            <a href="http://www.cs.drexel.edu/~bmitchell">Brian Mitchell</a> /
+                            <a href="http://twitter.com/hakimel">@DrBrianMitchell</a>
+
                     </p>
                 </section>
 
                 <section>
                     <h2>History of Centrality</h2>
                     <img style="border:none" width="800" src="img/CentralityHistory.png"/>
-                    <p>Centrality measures were first used in the field of Sociology</p>
+                    <p>
+                        Centrality measures were first used in the field of Sociology to model and study
+                        influential people in groups
+                    </p>
                 </section>
 
                 <section>
-                    <h2>There was a time</h2>
-                    <img style="border:none" width="800" src="img/SocialNetwork.jpg"/>
-                    <p>before these things existed...</p>
-                </section>
-
-                <section>
-                    <h2>This was a social network</h2>
+                    <h2>There was a time when this was a social network</h2>
                     <img style="border:none" width="800" src="img/HighSchoolHallway.jpg"/>
                 </section>
 
                 <section>
-                    <img style="border:none" src="img/CentralitySurveyPaper.png"/>
+                    <img style="border:none" width="800" src="img/SocialNetwork.jpg"/>
+                    <p>And that was long before these things existed...</p>
                 </section>
 
+                <section>
+                    <div class="contianer"><div class="row">
+                        <div class="col-lg-6">
+                            <img style="border:5px solid yellow" src="img/CentralitySurveyPaper.png"/>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="">
+                                <h3 style="text-transform: none;" >
+                                    <span class="text-magenta">This is a foundational paper from 1979
+                                    that surveys the use of centrality algorithms in early social
+                                    networks</span>
+                                </h3>
+                                <p>
+                                    Focus was on studying human communication and relationships
+                                    to determine what drives influence
+                                </p>
+                            </div>
+                        </div>
+                    </div></div>
+                </section>
+
+                <!-- GRAPH REVIEW -->
+                <section>
+                    <section>
+                        <h2>
+                            <span class="text-magenta">To Get Started We Need To Look at an Important Data Structure
+                            Used To Model Social Networks</span>
+                        </h2>
+                        <p>
+                            Called a Graph
+                        </p>
+                        <p>
+                            $G=(V,E)$
+                        </p>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">Graphs</span></h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Illustration</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-8">
+                                <p>Notation</p>
+                                <p></p>
+                                <p style="font-size:smaller">
+                                    <ul>
+                                        <li>$G=(V,E)$ </li>
+                                        <li>$V = \{v_{\tiny l} \mid v_{\tiny l} \in V, 1 \leq l \leq |V|\}$</li>
+                                        <li>$E = \{\{u,v\} \mid \{u,v\} \in E \land u,v \in V\}$</li>
+                                        <li>$deg(v) =  \{|\{v,e\}| \mid \forall \{v,e_{\tiny i}\}\in E \land e_{\tiny i} \in V\}$</li>
+                                    </ul>
+                                </p>
+                                <p class="text-yellow-bold">
+                                    Just kidding, could not resist...
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">Graphs - By Example</span></h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Graph</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-8">
+                                <p>Example Notation</p>
+                                <p></p>
+                                <p style="font-size:smaller">
+                                <ul>
+                                    <li>$G=(V,E)$ </li>
+                                    <li>$V = \{A, B, C, D, E\}$</li>
+                                    <li>$E = \{(A,B),(B,C),(C,D),(C,E),(D,F),(E,F)\}$</li>
+                                    <li>$deg(A)=1$</li>
+                                    <li>$deg(B,D,E,F)=2$</li>
+                                    <li>$deg(C)=3$</li>
+                                    <li>The diameter of the graph is the largest degree, in this case 3</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">Graphs Come in Different Forms</span></h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Undirected Graph</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Directed Graph</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Directed Weighted Graph</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="img/directed_sample.svg"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="img/directed_weighted_sample.svg"/>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">
+                            They are also pretty simple data structures</span></h3>
+                        <pre><code data-trim contenteditable>
+case class Vertex(id:Integer, name:String)
+
+case class Edge(id:Integer, src:Integer,
+                            dest:Integer, weight:Integer=1)
+
+class Graph(vset:List[Vertex], eset:List[Edge],
+                            isDirected:Boolean = false)
+                        </code></pre>
+                        <img src="img/Scala_logo.png"/>
+                    </section>
+                </section>
+
+                <!-- GRAPHS AS ART -->
+                <section>
+                    <section>
+                        <h1>Graphs Sometimes Also Make Nice Art</h1>
+                    </section>
+                    <section>
+                        <h2>Social Network</h2>
+                        <img src="img/FacebookGraph.png" />
+                    </section>
+                    <section>
+                        <h2>Internet Graph</h2>
+                        <img src="img/InternetGraph.png" />
+                    </section>
+                    <section>
+                        <h2>Internet Graph (2)</h2>
+                        <img src="img/InternetGraphArt.jpg" />
+                    </section>
+                    <section>
+                        <h2>Malware Delivery Network</h2>
+                        <div>
+                            <img src="img/Malware2.png"/>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>But what about Software Engineering?</h1>
+                </section>
+
+                <section>
+                    <h1>Your new job - Day 1</h1>
+                    <h3>Lets look at a system with</h3>
+                    <h4><span class="text-green">115 Classes & 363 dependencies</span></h4>
+                    <h3>Here come the change requests...</h3>
+                </section>
+
+
+
+
+                <section data-background-color="white" data-background="img/bunch2.svg">
+                </section>
+
+                <section data-background-color="white" data-background="img/bunch2.svg">
+                    <h1><span class="blackandred">Where should I start?</span></h1>
+                    <h2><span class="blackandyellow">This looks complicated!</span></h2>
+                </section>
+
+                <section data-background-color="white" data-background="img/HackingCode.jpg">
+                    <h1><span class="blackandred">We Can Hack!</span></h1>
+                </section>
+
+                <section data-background-color="white" data-background="img/understandBulb.jpg">
+                    <h1><span class="blackandred">Or, We can try to understand...</span></h1>
+                </section>
+
+                <section>
+                    <div class="contianer">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img style="border:5px solid yellow" src="img/RelitiveImportanceInNetworks.png"/>
+                            </div>
+                            <div class="col-lg-6">
+                                <h3 style="text-transform: none;" >
+                                    <span class="text-magenta">
+                                        These guys did some interesting work
+                                    </span>
+                                </h3>
+                                <p>
+                                    I wonder what would happen if we applied these algorithms to
+                                    software graphs?
+                                </p>
+                                <p class="text-green">
+                                    Looks like they are also interested in centrality algorithms
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><span class="text-magenta">Back to the History of Centrality</span></h3>
+                    <img style="border:none" width="800" src="img/CentralityHistory.png"/>
+                    <ul>
+                        <li class="text-blue">Early applications mainly focused on small group socialology problems</li>
+                        <li class="text-green">
+                            Modern applications investigate importance in large social networks,
+                            link analysis for search ranking, analysis of how diseases spread,
+                            telecommunication network optimization, and so on...
+                        </li>
+                    </ul>
+                    <p class="text-yellow">I'm insterested in Software Engineering Applicaitions</p>
+                </section>
+
+                <section>
+                    <h3><span class="text-magenta">Back to the History of Centrality</span></h3>
+                    <img style="border:none" width="800" src="img/CentralityHistory.png"/>
+                    <ul>
+                        <li>So in the early days social graphs were small, undirected, and calculations could be done by hand</li>
+                        <li>Modern graphs are large, tend to be directed, both add challenges</li>
+                    </ul>
+                    <p class="text-yellow">We will see how we deal with these challenges shortly</p>
+                </section>
+
+                <!-- MATH REVIEW -->
                 <section>
 					<section>
 						<h1>Math Review</h1>
 					</section>
 					<section>
 						<h3>Relations</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p style="text-align:left">
-									A relation is a mapping from values in the domain to the range.
-									<ul>
-										<li>
-											The elements in domain and range must be defined, in this case $\mathbb{R}$
-										</li>
-										<li>
-											The relation $R$ is defined as $R \subset R \times R$
-										</li>
-									</ul>
-								</p>
-							</div>
-							<div class="col-lg-6">
-								<img src="img/MathRelation.jpg"/>
-							</div>
-						</div>
+						<div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div style="position:absolute;top:50%;"><img width="400" src="img/MathRelation.jpg"/></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p style="text-align:left">
+                                        A relation is a mapping from values in the domain to the range.
+                                        <ul>
+                                            <li>
+                                                The elements in domain and range must be defined, in this case $\mathbb{R}$
+                                            </li>
+                                            <li>
+                                                The relation $R$ is defined as $R \subset R \times R$
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 					</section>
-					<section data-background="#dddddd">
-						<h3 style="width:1100px">Algebra review, lets consider a function, which is a special form of a relation</h3>
-						<div class="row">
-							<div class="col-lg-6" style="font-size:smaller">
-								<p style="text-align:left">
-									Functions uniqulely map values from the domain to the range
-								</p>
-								<p style="text-align:left">
-									Conisider the general form of a linear function:
-								</p>
-								$f(x) = ax + b$
-								<p style="text-align:left">
-									So solutions for $f(x)=2x$ fall on a line (shown in green) on right
-								</p>
-							</div>
-							<div class="col-lg-6">
-								<img style="border:none" width="400" src="img/function.jpg"/>
-							</div>
-						</div>
-						<div class="row" style="font-size:smaller">
-							In this case we can also see solutions lie on the $\vec{(0,2)}$ vector
-						</div>
+					<section>
+						<h3 style="width:1100px">
+                            <span class="text-magenta">Algebra review, lets consider a function, which is a special form of a relation</span>
+                        </h3>
+						<div class="container">
+                            <div class="row">
+                                <div class="col-lg-6" style="font-size:smaller">
+                                    <p style="text-align:left">
+                                        Functions uniquely map values from the domain to the range
+                                    </p>
+                                    <p style="text-align:left">
+                                        Consider:
+                                    </p>
+                                    <p class="text-green">$f(x) = ax + b$</p>
+                                    <p style="text-align:left">
+                                        So solutions for $f(x)=2x$ fall on a line (shown in green) on right
+                                    </p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img style="border:none" width="400" src="img/function.jpg"/>
+                                </div>
+                            </div>
+                            <div class="row text-blue" style="font-size:smaller">
+                                In this case we can also see solutions lie on the $\vec{(0,2)}$ vector
+                            </div>
+                        </div>
                 	</section>
 					<section>
 						<h3>Now Vectors</h3>
@@ -131,48 +367,10 @@
 					</section>
 				</section>
 
-                <section>
-                    <h2>title 1 b c d e f g h i j k l m n o p q r s t u v w x y z</h2>
-                    <div class="row">
-                        <div class="col-lg-6" style="text-align:left">
-                            <p>col 1 1 b c d e f g h i j k l m n o p q r s t u v w x y z</p>
-                        </div>
-                        <div class="col-lg-6" style="text-align:left">
-                            <p>col2 2 b c d e f g h i j k l m n o p q r s t u v w x y z</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p>footer 1 b c d e f g h i j k l m n o p q r s t u v w x y z</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>What is a Graph?</h2>
-                    <p>
-                        $G=[V,E]$
-
-                    </p>
-                </section>
-                <section>
-                    <h2>Social Network</h2>
-                    <img src="img/FacebookGraph.png" />
-                </section>
-                <section>
-                    <h2>Internet Graph</h2>
-                    <img src="img/InternetGraph.png" />
-                </section>
-                <section>
-                    <h2>Internet Graph (art)</h2>
-                    <img src="img/InternetGraphArt.jpg" />
-                </section>
 
 
-                <section data-background="#dddddd">
-                    <h3>So which node is most impportant?</h3>
-                    <p>
-                        <img style="background:transparent; border:none; box-shadow:none;" src="img/bunch2.svg"/>
-                    </p>
-                </section>
+
+
 
 				<section data-background="#dddddd">
 					<h3>So which node is most impportant?</h3>
@@ -181,26 +379,6 @@
 
 					</p>
 				</section>
-
-
-                <section>
-                    <h1>Reveal.js</h1>
-                    <h3>The HTML Presentation Framework</h3>
-                    <div class="col-md-6">
-                        <ul>
-                            <li>foo</li>
-                            <li>foo</li>
-                            <li>foo</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6"><img src="img/bunch2.jpg"/></div>
-                </section>
-                <section>
-                    <h1>Math Slide</h1>
-                    <p>Math Formula</p>
-                    <img style="float:right; background: transparent" height="200" width="200" src="img/g1.svg"/>
-                    <p>$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$</p>
-                </section>
 
 				<!-- Linear Transformations -->
 				<section>
@@ -517,6 +695,7 @@
                     </section>
 				</section>
 
+                <!-- GRAPH STUFF -->
 				<section>
 					<section>
 						<h2>Graph Notation</h2>
