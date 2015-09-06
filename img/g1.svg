@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="8.09375in" height="5.34375in"
+		viewBox="0 0 582.75 384.75" xml:space="preserve" color-interpolation-filters="sRGB" class="st7">
+	<v:documentProperties v:langID="1033" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {visibility:visible}
+		.st2 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
+		.st3 {fill:#5b9bd5;stroke:#c7c8c8;stroke-width:0.25}
+		.st4 {marker-end:url(#mrkr4-26);stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st5 {fill:#5b9bd5;fill-opacity:1;stroke:#5b9bd5;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st6 {marker-end:url(#mrkr4-32);stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st7 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-26" class="st5" v:arrowType="4" v:arrowSize="2" v:setback="0" refX="-0" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+		<marker id="mrkr4-32" class="st5" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<defs id="Filters">
+		<filter id="filter_2">
+			<feGaussianBlur stdDeviation="2"/>
+		</filter>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Page-1</title>
+		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="0" v:shadowOffsetX="9" v:shadowOffsetY="-9"/>
+		<v:layer v:name="Connector" v:index="0"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(3.0294,-185.348)">
+			<title>Circle</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<g id="shadow1-2" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st2"/>
+			</g>
+			<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st3"/>
+		</g>
+		<g id="shape2-6" v:mID="2" v:groupContext="shape" transform="translate(183.029,-5.3478)">
+			<title>Circle.2</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<g id="shadow2-7" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st2"/>
+			</g>
+			<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st3"/>
+		</g>
+		<g id="shape3-11" v:mID="3" v:groupContext="shape" transform="translate(309.029,-275.348)">
+			<title>Circle.3</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<g id="shadow3-12" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st2"/>
+			</g>
+			<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st3"/>
+		</g>
+		<g id="shape4-16" v:mID="4" v:groupContext="shape" transform="translate(471.029,-95.3478)">
+			<title>Circle.4</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<g id="shadow4-17" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st2"/>
+			</g>
+			<path d="M0 330.75 A54 54 0 0 1 108 330.75 A54 54 0 1 1 0 330.75 Z" class="st3"/>
+		</g>
+		<g id="shape5-21" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(95.2182,-277.537)">
+			<title>Dynamic connector</title>
+			<path d="M0 384.75 C29.31 384.75 29.31 294.75 229.62 294.75" class="st4"/>
+		</g>
+		<g id="shape6-27" v:mID="6" v:groupContext="shape" v:layerMember="0" transform="translate(417.029,-329.348)">
+			<title>Dynamic connector.6</title>
+			<path d="M0 384.75 L108 384.75 L108 503.71" class="st6"/>
+		</g>
+		<g id="shape7-33" v:mID="7" v:groupContext="shape" v:layerMember="0" transform="translate(363.029,-275.348)">
+			<title>Dynamic connector.7</title>
+			<path d="M0 384.75 L0 562.56 L-80.77 562.56" class="st6"/>
+		</g>
+	</g>
+</svg>
