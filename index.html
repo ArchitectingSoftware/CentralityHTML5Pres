@@ -272,7 +272,8 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     software graphs?
                                 </p>
                                 <p class="text-green">
-                                    Looks like they are also interested in centrality algorithms
+                                    Looks like they are also exploring the use of centrality
+                                    algorithms on graphs
                                 </p>
                             </div>
                         </div>
@@ -285,12 +286,12 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                     <ul>
                         <li class="text-blue">Early applications mainly focused on small group socialology problems</li>
                         <li class="text-green">
-                            Modern applications investigate importance in large social networks,
+                            Modern use cases investigate importance in large social networks,
                             link analysis for search ranking, analysis of how diseases spread,
                             telecommunication network optimization, and so on...
                         </li>
                     </ul>
-                    <p class="text-yellow">I'm insterested in Software Engineering Applicaitions</p>
+                    <h4 class="text-yellow">What about Software Engineering Applications</h4>
                 </section>
 
                 <section>
@@ -303,478 +304,21 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                     <p class="text-yellow">We will see how we deal with these challenges shortly</p>
                 </section>
 
-                <!-- MATH REVIEW -->
                 <section>
-					<section>
-						<h1>Math Review</h1>
-					</section>
-					<section>
-						<h3>Relations</h3>
-						<div class="container">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div style="position:absolute;top:50%;"><img width="400" src="img/MathRelation.jpg"/></div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <p style="text-align:left">
-                                        A relation is a mapping from values in the domain to the range.
-                                        <ul>
-                                            <li>
-                                                The elements in domain and range must be defined, in this case $\mathbb{R}$
-                                            </li>
-                                            <li>
-                                                The relation $R$ is defined as $R \subset R \times R$
-                                            </li>
-                                        </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-					</section>
-					<section>
-						<h3 style="width:1100px">
-                            <span class="text-magenta">Algebra review, lets consider a function, which is a special form of a relation</span>
-                        </h3>
-						<div class="container">
-                            <div class="row">
-                                <div class="col-lg-6" style="font-size:smaller">
-                                    <p style="text-align:left">
-                                        Functions uniquely map values from the domain to the range
-                                    </p>
-                                    <p style="text-align:left">
-                                        Consider:
-                                    </p>
-                                    <p class="text-green">$f(x) = ax + b$</p>
-                                    <p style="text-align:left">
-                                        So solutions for $f(x)=2x$ fall on a line (shown in green) on right
-                                    </p>
-                                </div>
-                                <div class="col-lg-6">
-                                    <img style="border:none" width="400" src="img/function.jpg"/>
-                                </div>
-                            </div>
-                            <div class="row text-blue" style="font-size:smaller">
-                                In this case we can also see solutions lie on the $\vec{(0,2)}$ vector
-                            </div>
-                        </div>
-                	</section>
-					<section>
-						<h3>Now Vectors</h3>
-						<img src="img/vectors.jpg" width="800"/>
-						<p>
-							A vector is a line in an N-Dimentional space
-						</p>
-					</section>
-				</section>
-
-
-
-
-
-
-				<section data-background="#dddddd">
-					<h3>So which node is most impportant?</h3>
-					<p>
-						<embed id="bunch-graph" style="width: 500px; height: 500px; border:1px solid black;" type="image/svg+xml" src="img/bunch2.svg" />
-
-					</p>
-				</section>
-
-				<!-- Linear Transformations -->
-				<section>
-					<section>
-						<h1>Linear Transformations</h1>
-					</section>
-					<section>
-						<h3>Before we start a brief review of matrix multiplication</h3>
-						<p style="text-align:left">This is how to multiply a 2x2 matrix with a 1x2 vector:</p>
-						<p>
-							$
-							\begin{bmatrix}a & b \\ c & d \end{bmatrix}
-							\begin{bmatrix}I\\S\end{bmatrix} =
-							\begin{bmatrix} aI + bS \\ cI + dS \end{bmatrix}
-							$
-						</p>
-						<p style="text-align:left">
-							For the purposes of this talk we will be focusing on square matricies [NxN] multiplied by
-							[1xN] vectors.  The resultant answer will always be a [1xN] vector
-						</p>
-					</section>
-					<section>
-						<h3>Examples</h3>
-						<p style="text-align:left">Example 1:</p>
-						<p>
-							$
-							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
-							\begin{bmatrix}2\\-5\end{bmatrix} =
-							\begin{bmatrix} 4 - 10 \\ 10 + 5 \end{bmatrix} =
-							\begin{bmatrix} -6 \\ 15 \end{bmatrix}
-							$
-						</p>
-						<p></p>
-						<p style="text-align:left">Example 2:</p>
-						<p>
-							$
-							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
-							\begin{bmatrix}1\\1\end{bmatrix} =
-							\begin{bmatrix} 2+2 \\ 5-1 \end{bmatrix} =
-							\begin{bmatrix} 4 \\ 4 \end{bmatrix}
-							$
-						</p>
-						<p>
-							Anybody notice anything special?  More on this later
-						</p>
-					</section>
-					<section>
-						<h3>Rotation</h3>
-						<p>
-							$
-								\begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}
-								\begin{bmatrix}x\\y\end{bmatrix} =
-								\begin{bmatrix}x' = x \cos(\theta)-y \sin(\theta)\\y' = x \sin(\theta)+y \cos(\theta)\end{bmatrix}
-							$
-						</p>
-						<p>
-							In other words, point [x,y] is transformed to point [x',y'] via a rotation of $\theta$ degrees.
-							Rotation is counter-clockwise if $\theta > 0$ and clockwise if $\theta < 0$
-						</p>
-						<img src="img/rotate_transform.gif"/>
-					</section>
-					<section> <!-- reflection -->
-						<h3>Reflection</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} 1  & 0 \\ 0 & -1 \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}x\\-y\end{bmatrix}
-									$
-								</small></p>
-								<p>Reflects on y axis</p>
-							</div>
-
-							<div class="col-lg-6">
-								<img align="right" src="img/reflection_transform.gif"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} -1  & 0 \\ 0 & 1 \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}x\\-y\end{bmatrix}
-									$
-								</small></p>
-								<p>Reflects on x axis</p>
-							</div>
-							<div class="col-lg-6">
-								<img align="right" src="img/reflection2_transform.gif"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} 0  & 1 \\ 1 & 0 \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}x\\-y\end{bmatrix}
-									$
-								</small></p>
-								<p>Reflects in place</p>
-							</div>
-							<div class="col-lg-6">
-								<img align="right" src="img/reflection3_transform.gif"/>
-							</div>
-						</div>
-					</section>
-
-					<section> <!-- shear -->
-						<h3>Shear</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} 1  & k \\ 0 & 1 \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}x+ky\\y\end{bmatrix}
-									$
-								</small></p>
-								<p>shears in x direction by k units</p>
-							</div>
-
-							<div class="col-lg-6">
-								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/shear1_transform.gif"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} 1  & 0 \\ k & 1 \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}x\\y+kx\end{bmatrix}
-									$
-								</small></p>
-								<p>shears in x direction by k units</p>
-							</div>
-							<div class="col-lg-6">
-								<img style="max-width:100%; max-height:100%;" align="right" src="img/shear2_transform.gif"/>
-							</div>
-						</div>
-					</section>
-
-					<section> <!-- stretch -->
-						<h3>Stretch</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} k  & 0 \\ 0 & 1 \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}kx\\y\end{bmatrix}
-									$
-								</small></p>
-								<p>stretches in x direction by k units</p>
-							</div>
-
-							<div class="col-lg-6">
-								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchx_transform.gif"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} 1  & 0 \\ 0 & k \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}x\\ky\end{bmatrix}
-									$
-								</small></p>
-								<p>stretches in y direction by k units</p>
-							</div>
-							<div class="col-lg-6">
-								<img style="max-width:100%; max-height:100%;" align="right" src="img/stretchy_transform.gif"/>
-							</div>
-						</div>
-					</section>
-
-					<section> <!-- stretch -->
-						<h3>Stretch (2)</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}kx\\ky\end{bmatrix}
-									$
-								</small></p>
-								<p style="text-align:left">stretches in both directions by k units</p>
-							</div>
-
-							<div class="col-lg-6">
-								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchxy_transform.jpg"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<p>
-									What is interesting here is that this transform does not distort the image in any way, it
-									simply scales it by a factor of $k$.
-								</p>
-							</div>
-						</div>
-					</section>
-				</section>
-
-				<!-- explain eigenvectors -->
-				<section>
-					<section>
-						<h1>Now with this knowledge we can get to Eigenvectors (and Eigenvalues)</h1>
-					</section>
-					<section>
-					  <!-- stretch -->
-						<h3>Geometrically visualizing Eigenvalues and Eigenvectors</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p><small>
-									$
-									\begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									\begin{bmatrix}kx\\ky\end{bmatrix}
-									$
-								</small></p>
-								<p style="text-align:left">stretches in both directions by k units</p>
-							</div>
-
-							<div class="col-lg-6">
-								<img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchxy_transform.jpg"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<p>
-									Lets rewrite the equation sligthly by pulling out $k$:
-								</p>
-								<p><small>
-									$
-									\begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
-									\begin{bmatrix}x\\y\end{bmatrix} =
-									k \begin{bmatrix}x\\y\end{bmatrix}
-									$
-								</small></p>
-								<p>
-									In this form $k$ is the eigenvalue, and $[x,y]$ is an eigenvector.  In other words an
-									eigenvector scales the information ecapsulated in a given square matrix by a factor of $k$
-								</p>
-							</div>
-						</div>
-					</section>
-					<section>
-						<h1>So why is this so interesting?</h1>
-					</section>
-					<section>
-						<h3>Lets look at the equation for determinnig an eigenvector</h3>
-						<p></p>
-						<p>
-							$A \vec{v} = \lambda \vec{v} $
-						</p>
-						<p>
-							So given a square matrix $A$ and a vector $\vec{v}$ we need to dermine if such a $\vec{v}$
-							exists that soles this equation.  If so, $\lambda$ is the eigenvector that scales $\vec{v}$
-							which is the eigenvector.
-						</p>
-					</section>
-					<section>
-						<h3>Recall our Matrix Multiplication Example</h3>
-						<p style="text-align:left">Example 1:</p>
-						<p>
-							$
-							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
-							\begin{bmatrix}2\\-5\end{bmatrix} =
-							\begin{bmatrix} 4 - 10 \\ 10 + 5 \end{bmatrix} =
-							\begin{bmatrix} -6 \\ 15 \end{bmatrix} =
-							-3 \begin{bmatrix} 2 \\ -5 \end{bmatrix}
-							$
-						</p>
-						<p></p>
-						<p style="text-align:left">Example 2:</p>
-						<p>
-							$
-							\begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
-							\begin{bmatrix}1\\1\end{bmatrix} =
-							\begin{bmatrix} 2+2 \\ 5-1 \end{bmatrix} =
-							\begin{bmatrix} 4 \\ 4 \end{bmatrix} =
-							4 \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-							$
-						</p>
-						<p>
-							So in this case [2,-5] and [1,1] are eigenvectors with eigenalues of -3 and 4 respectively
-						</p>
-					</section>
-					<section>
-						<h3>So this is kind of cool</h3>
-						<h5>The "information" in the matrix is stretched but does not fundementally change</h5>
-						<div class="row">
-							<div class="col-lg-6" style="text-align:left">
-								<p style="vertical-align:center">
-									The best way to think about this is that Eigenvectors help you compress information
-									in an [N x N] dimentional space, into a [1 x N] dementional space
-								</p>
-							</div>
-							<div class="col-lg-6">
-								<img src="img/Eigenvectors-extended.gif" width="500"/>
-							</div>
-						</div>
-					</section>
-                    <section>
-                        <h3>This is the basis for how Google ranks pages</h3>
-                        <img src="img/GoogleEigenvector.png"/>
-                    </section>
-				</section>
-
-                <!-- GRAPH STUFF -->
-				<section>
-					<section>
-						<h2>Graph Notation</h2>
-					</section>
-					<section>
-						<h3>Graphs</h3>
-						<div class="row">
-							<div class="col-lg-6">
-								<p>Graph</p>
-								<img src="img/sample_graph.svg"/>
-							</div>
-							<div class="col-lg-6">
-								<p style="font-size:smaller">Notation</p>
-								<p></p>
-								<p style="font-size:smaller">
-									<ul>
-										<li>$G=(V,E)$ </li>
-										<li>$V = \{v_{\tiny l} \mid v_{\tiny l} \in V, 1 \leq l \leq |V|\}$</li>
-                                        <li>$E = \{e_{\tiny i} = \{u,v\} \mid e_{\tiny i} \in E \land u,v \in V\}$</li>
-                                        <li>$deg(v) =  \{|\{v,e\}| \mid \forall \{v,e_{\tiny i}\}\in E \land e_{\tiny i} \in V\}$</li>
-									</ul>
-								</p>
-							</div>
-						</div>
-					</section>
-                    <section>
-                        <h3>Graphs</h3>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p>Graph</p>
-                                <img src="img/sample_graph.svg"/>
-                            </div>
-                            <div class="col-lg-8">
-                                <p style="font-size:smaller">Notation</p>
-                                <p></p>
-                                <p style="font-size:smaller">
-                                <ul>
-                                    <li>$G=(V,E)$ </li>
-                                    <li>$V = \{A, B, C, D, E\}$</li>
-                                    <li>$E = \{(A,B),(B,C),(C,D),(C,E),(D,F),(E,F)\}$</li>
-                                    <li>$deg(A)=1$</li>
-                                    <li>$deg(B,D,E,F)=2$</li>
-                                    <li>$deg(C)=3$</li>
-                                </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Graphs</h3>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p>Undirected Graph</p>
-                                <img src="img/sample_graph.svg"/>
-                            </div>
-                            <div class="col-lg-4">
-                                <p>Directed Graph</p>
-                                <img src="img/directed_sample.svg"/>
-                            </div>
-                            <div class="col-lg-4">
-                                <p>Directed Weighted Graph</p>
-                                <img src="img/directed_weighted_sample.svg"/>
-                            </div>
-                        </div>
-                    </section>
-				</section>
-
-
-                <section>
-                    <h3>We saw this guy before...</h3>
-                    <h4>Which node do you think is most influential?</h4>
-                    <h4>Which node do you think is least influential?</h4>
-                    <img src="img/directed_sample.svg"/>
+                    <h3><span class="text-magenta">Classification of Centrality Algorithms</span></h3>
+                    <ol>
+                        <li>Geometry Based Algorithms - Degree Centrality</li>
+                        <li>Path Based Algorithms - Closeness and Betweenes Centrality</li>
+                        <li>Spectral Techniques - Eigenvector, PageRank, Hits</li>
+                    </ol>
+                    <p></p>
+                    <h5>
+                        <span class="text-green">
+                            We will need to do a little linear algebra review for the spectral techniques
+                        </span>
+                    </h5>
                 </section>
 
-                <section>
-                    <h3>Paper Plug - This is a good one!</h3>
-                    <img src="img/RelitiveImportanceInNetworks.png"/>
-                </section>
 
                 <section>
                     <section>
@@ -790,7 +334,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         <h3>Degree Centrality - Variation  - Normalize</h3>
                         <p>Divide by max number of Nodes (N-1)</p>
                         <img src="img/directed_sample.svg"/>
-                        <p>Degree Centrality = $[\frac{1}{2},1,\frac{3}{4},\frac{1}{2},\frac{3}{4}]$.  So node B is the most influential!</p>
+                        <p>Degree Centrality = $\left[\frac{1}{2},1,\frac{3}{4},\frac{1}{2},\frac{3}{4}\right]$.  So node B is the most influential!</p>
                     </section>
                     <section>
                         <h3>Degree Centrality - Centrality of Entire Network</h3>
@@ -829,48 +373,51 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         <h1>Closeness Centrality</h1>
                     </section>
                     <section>
-                        <h3>Closeness Centrality</h3>
+                        <h3><span class="text-magenta">Closeness Centrality</span></h3>
 
                         <div class="row">
                             <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
-                                <p style="text-align:left">Goal is to guage centrality based on how close nodes are to each other based on distance</p>
+                                <h4 style="text-align:left">
+                                    Goal is to guage centrality based on how close nodes are to each other
+                                    based on distance
+                                </h4>
                                 <ul>
                                     <li>
-                                        A <strong>path</strong> is a set of links connecting 2 nodes
+                                        A <span class="text-green">path</span> is a set of links connecting 2 nodes
                                     </li>
                                     <li>
-                                        A <strong> shortest path</strong> is a set a path between 2 nodes with shortest distance
+                                        A <span class="text-green"> shortest path</span> is a set a path between 2 nodes with shortest distance
                                     </li>
                                     <li>
-                                        The <strong>diameter</strong> of a graph is the maximum shortest path length between all node pairs
+                                        The <span class="text-green">diameter</span> of a graph is the maximum shortest path length between all node pairs
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </section>
                     <section>
-                        <h3>Closeness Centrality</h3>
+                        <h3><span class="text-magenta">Closeness Centrality</span></h3>
                         <div class="row">
                             <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
                                 <p style="text-align:left">Example: Paths from (A -> F)</p>
                                 <ul>
                                     <li>
-                                        A -> B -> C -> D -> E -> F [length:5]
+                                        A &#x2192; B &#x2192; C &#x2192; D &#x2192; E &#x2192; F [length:5]
                                     </li>
                                     <li>
-                                        A -> B -> C -> E -> D -> F [length:5]
+                                        A &#x2192; B &#x2192; C &#x2192; E &#x2192; D &#x2192; F [length:5]
                                     </li>
                                     <li>
-                                        A -> B -> C -> D -> F [length:4]
+                                        A &#x2192; B &#x2192; C &#x2192; D &#x2192; F [length:4]
                                     </li>
                                     <li>
-                                        A -> B -> C -> E -> F [length:4]
+                                        A &#x2192; B &#x2192; C &#x2192; E &#x2192; F [length:4]
                                     </li>
                                 </ul>
                                 <p style="text-align:left">
-                                    All 4 are paths from A->F, the last 2 are shortest paths
+                                    All 4 are paths from A &#x2192; F, the last 2 are shortest paths
                                 </p>
                             </div>
                         </div>
@@ -884,7 +431,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                 <p>
                                     $C(x) = \left[\frac{\sum_{y, y \neq x}d(x,y)}{N-1}\right]^{-1}$
                                 </p>
-                                <p style="font-size:smaller">
+                                <p style="font-size:smaller" class="text-yellow">
                                     In other words the inverse of the average minimum distance from a node to
                                     all other nodes
                                 </p>
@@ -953,7 +500,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                So solution is: [C, D, E, B, F, A]
+                                So solution is: [C, (D / E), B, F, A]
                             </div>
                         </div>
                     </section>
@@ -1006,7 +553,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                So solution is: [C, D, E, B, F, A]
+                                So solution is: [C, (D / E), B, F, A]
                             </div>
                         </div>
                     </section>
@@ -1018,18 +565,18 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         <h1>Closeness Centrality - Directed Graphs</h1>
                     </section>
                     <section>
-                        <h3>Closeness Centrality - Issues with Directed Graphs</h3>
+                        <h3><span class="text-magenta">Closeness Centrality - Issues with Directed Graphs</span></h3>
 
                         <div class="row">
                             <div class="col-lg-4"><img src="img/directed_sample.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
                                 <p style="text-align:left">
-                                    There are 2 fundemental problems with this function on directed graphs
+                                    There are 2 problems with this Closeness Centrality on directed graphs
                                 </p>
                                 <ul>
                                     <li>
                                         First a path lenght might be <span class="text-yellow-bold">infinate</span>.
-                                        Consider if the edge (D -> B) was eliminated the path length to all other nodes
+                                        Consider if the edge (D &#x2192; B) was eliminated the path length to all other nodes
                                         would be infinate
                                     </li>
                                     <li>
@@ -1041,7 +588,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                     </section>
                     <section>
-                        <h3>Problem 1: We need to deal with infinate distances</h3>
+                        <h3><span class="text-magenta">Problem 1: We need to deal with infinate distances</span></h3>
                         <p>
                             $C(x) = \left[\frac{1}{\sum_{y, y \neq x}d(x,y)}\right]$
                         </p>
@@ -1054,11 +601,13 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </p>
                     </section>
                     <section>
-                        <h4>Problem 2: Intuition with "closeness" for directed graphs might not always make sense</h4>
+                        <h4><span class="text-magenta">
+                            Problem 2: Intuition with "closeness" for directed graphs might not always make sense
+                        </span></h4>
                         <div class="row">
                             <div class="col-lg-4"><img src="img/directed_sample.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
-                                <p style="text-align:left">Closeness Centrality is Calculated as Follows</p>
+                                <p style="text-align:left" class="text-yellow">For the graph on the left:</p>
                                 <p style="font-size:smaller">
                                     $
                                     C(A) = \left[\frac{1+2+3+2}{4}\right]^{-1} =
@@ -1111,10 +660,10 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         <h1>Betweeness Centrality</h1>
                     </section>
                     <section>
-                        <h2>Between Centrality - Basic Idea</h2>
+                        <h2><span class="text-magenta">Between Centrality - Basic Idea</span></h2>
                             <ol>
                                 <li>
-                                    Find shortest paths between all node pairs in the graph
+                                    Find shortest paths between <span class="text-yellow">all node pairs</span> in the graph
                                 </li>
                                 <li>
                                     Award "points" to nodes for being on each of shortest the shortest paths
@@ -1126,11 +675,12 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             </ol>
                     </section>
                     <section>
-                        <p>Between Centrality - Small(Red) to Large(blue)</p>
+                        <h3><span class="text-magenta">Between Centrality Example</span></h3>
+                        <p>Small(<span class="text-red">Red</span>) to Large(<span class="text-blue">Blue</span>)</p>
                         <img width="500"src="img/BetweenessWikipedia.png"/>
                     </section>
                     <section>
-                        <h3>Back to our example</h3>
+                        <h3><span class="text-magenta">Back to our example</span></h3>
                         <div class="row">
                             <div class="col-lg-4">
                                 <img src="img/directed_sample.svg"/>
@@ -1158,7 +708,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                     </section>
                     <section>
-                        <h4>Nodes on Shortest Path</h4>
+                        <h3><span class="text-magenta">Nodes on Shortest Path</span></h3>
                                 <table width="100%" style="position:relative;left:-150px">
                                     <thead>
                                     <tr style="font-size:smaller">
@@ -1200,7 +750,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                 </table>
                     </section>
                     <section>
-                        <h3>Back to our example</h3>
+                        <h3><span class="text-magenta">Back to our example</span></h3>
                         <div class="row">
                             <div class="col-lg-4">
                                 <img src="img/directed_sample.svg"/>
@@ -1212,13 +762,484 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             </div>
                         </div>
                         <div class="row">
-                            Like closeness centrality, betweenness centrality tends to work better on undirected graphs
+                           <p> Like closeness centrality, betweenness centrality tends to work better on undirected graphs.</p>
+                            <p>Node C seems like it should be more influential</p>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- MATH REVIEW -->
+                <section>
+                    <section>
+                        <h1>Math Review</h1>
+                    </section>
+                    <section>
+                        <h3>Relations</h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div style="position:absolute;top:50%;"><img width="400" src="img/MathRelation.jpg"/></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p style="text-align:left">
+                                        A relation is a mapping from values in the domain to the range.
+                                    <ul>
+                                        <li>
+                                            The elements in domain and range must be defined, in this case $\mathbb{R}$
+                                        </li>
+                                        <li>
+                                            The relation $R$ is defined as $R \subset R \times R$
+                                        </li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3 style="width:1100px">
+                            <span class="text-magenta">Algebra review, lets consider a function, which is a special form of a relation</span>
+                        </h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6" style="font-size:smaller">
+                                    <p style="text-align:left">
+                                        Functions uniquely map values from the domain to the range
+                                    </p>
+                                    <p style="text-align:left">
+                                        Consider:
+                                    </p>
+                                    <p class="text-green">$f(x) = ax + b$</p>
+                                    <p style="text-align:left">
+                                        So solutions for $f(x)=2x$ fall on a line (shown in green) on right
+                                    </p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img style="border:none" width="400" src="img/function.jpg"/>
+                                </div>
+                            </div>
+                            <div class="row text-blue" style="font-size:smaller">
+                                In this case we can also see solutions lie on the $\vec{(0,2)}$ vector
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Now Vectors</h3>
+                        <img src="img/vectors.jpg" width="800"/>
+                        <p>
+                            A vector is a line in an N-Dimentional space
+                        </p>
+                    </section>
+                </section>
+
+
+
+
+
+
+                <section data-background="#dddddd">
+                    <h3>So which node is most impportant?</h3>
+                    <p>
+                        <embed id="bunch-graph" style="width: 500px; height: 500px; border:1px solid black;" type="image/svg+xml" src="img/bunch2.svg" />
+
+                    </p>
+                </section>
+
+                <!-- Linear Transformations -->
+                <section>
+                    <section>
+                        <h1>Linear Transformations</h1>
+                    </section>
+                    <section>
+                        <h3>Before we start a brief review of matrix multiplication</h3>
+                        <p style="text-align:left">This is how to multiply a 2x2 matrix with a 1x2 vector:</p>
+                        <p>
+                            $
+                            \begin{bmatrix}a & b \\ c & d \end{bmatrix}
+                            \begin{bmatrix}I\\S\end{bmatrix} =
+                            \begin{bmatrix} aI + bS \\ cI + dS \end{bmatrix}
+                            $
+                        </p>
+                        <p style="text-align:left">
+                            For the purposes of this talk we will be focusing on square matricies [NxN] multiplied by
+                            [1xN] vectors.  The resultant answer will always be a [1xN] vector
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Examples</h3>
+                        <p style="text-align:left">Example 1:</p>
+                        <p>
+                            $
+                            \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+                            \begin{bmatrix}2\\-5\end{bmatrix} =
+                            \begin{bmatrix} 4 - 10 \\ 10 + 5 \end{bmatrix} =
+                            \begin{bmatrix} -6 \\ 15 \end{bmatrix}
+                            $
+                        </p>
+                        <p></p>
+                        <p style="text-align:left">Example 2:</p>
+                        <p>
+                            $
+                            \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+                            \begin{bmatrix}1\\1\end{bmatrix} =
+                            \begin{bmatrix} 2+2 \\ 5-1 \end{bmatrix} =
+                            \begin{bmatrix} 4 \\ 4 \end{bmatrix}
+                            $
+                        </p>
+                        <p>
+                            Anybody notice anything special?  More on this later
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Rotation</h3>
+                        <p>
+                            $
+                            \begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}
+                            \begin{bmatrix}x\\y\end{bmatrix} =
+                            \begin{bmatrix}x' = x \cos(\theta)-y \sin(\theta)\\y' = x \sin(\theta)+y \cos(\theta)\end{bmatrix}
+                            $
+                        </p>
+                        <p>
+                            In other words, point [x,y] is transformed to point [x',y'] via a rotation of $\theta$ degrees.
+                            Rotation is counter-clockwise if $\theta > 0$ and clockwise if $\theta < 0$
+                        </p>
+                        <img src="img/rotate_transform.gif"/>
+                    </section>
+                    <section> <!-- reflection -->
+                        <h3>Reflection</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} 1  & 0 \\ 0 & -1 \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}x\\-y\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>Reflects on y axis</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img align="right" src="img/reflection_transform.gif"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} -1  & 0 \\ 0 & 1 \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}x\\-y\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>Reflects on x axis</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img align="right" src="img/reflection2_transform.gif"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} 0  & 1 \\ 1 & 0 \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}x\\-y\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>Reflects in place</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img align="right" src="img/reflection3_transform.gif"/>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section> <!-- shear -->
+                        <h3>Shear</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} 1  & k \\ 0 & 1 \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}x+ky\\y\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>shears in x direction by k units</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img tyle="max-width:100%; max-height:100%;" align="right" src="img/shear1_transform.gif"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} 1  & 0 \\ k & 1 \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}x\\y+kx\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>shears in x direction by k units</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img style="max-width:100%; max-height:100%;" align="right" src="img/shear2_transform.gif"/>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section> <!-- stretch -->
+                        <h3>Stretch</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} k  & 0 \\ 0 & 1 \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}kx\\y\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>stretches in x direction by k units</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchx_transform.gif"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} 1  & 0 \\ 0 & k \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}x\\ky\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>stretches in y direction by k units</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img style="max-width:100%; max-height:100%;" align="right" src="img/stretchy_transform.gif"/>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section> <!-- stretch -->
+                        <h3>Stretch (2)</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}kx\\ky\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p style="text-align:left">stretches in both directions by k units</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchxy_transform.jpg"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>
+                                    What is interesting here is that this transform does not distort the image in any way, it
+                                    simply scales it by a factor of $k$.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- explain eigenvectors -->
+                <section>
+                    <section>
+                        <h1>Now with this knowledge we can get to Eigenvectors (and Eigenvalues)</h1>
+                    </section>
+                    <section>
+                        <!-- stretch -->
+                        <h3>Geometrically visualizing Eigenvalues and Eigenvectors</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    \begin{bmatrix}kx\\ky\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p style="text-align:left">stretches in both directions by k units</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img tyle="max-width:100%; max-height:100%;" align="right" src="img/stretchxy_transform.jpg"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>
+                                    Lets rewrite the equation sligthly by pulling out $k$:
+                                </p>
+                                <p><small>
+                                    $
+                                    \begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
+                                    \begin{bmatrix}x\\y\end{bmatrix} =
+                                    k \begin{bmatrix}x\\y\end{bmatrix}
+                                    $
+                                </small></p>
+                                <p>
+                                    In this form $k$ is the eigenvalue, and $[x,y]$ is an eigenvector.  In other words an
+                                    eigenvector scales the information ecapsulated in a given square matrix by a factor of $k$
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h1>So why is this so interesting?</h1>
+                    </section>
+                    <section>
+                        <h3>Lets look at the equation for determinnig an eigenvector</h3>
+                        <p></p>
+                        <p>
+                            $A \vec{v} = \lambda \vec{v} $
+                        </p>
+                        <p>
+                            So given a square matrix $A$ and a vector $\vec{v}$ we need to dermine if such a $\vec{v}$
+                            exists that soles this equation.  If so, $\lambda$ is the eigenvector that scales $\vec{v}$
+                            which is the eigenvector.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Recall our Matrix Multiplication Example</h3>
+                        <p style="text-align:left">Example 1:</p>
+                        <p>
+                            $
+                            \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+                            \begin{bmatrix}2\\-5\end{bmatrix} =
+                            \begin{bmatrix} 4 - 10 \\ 10 + 5 \end{bmatrix} =
+                            \begin{bmatrix} -6 \\ 15 \end{bmatrix} =
+                            -3 \begin{bmatrix} 2 \\ -5 \end{bmatrix}
+                            $
+                        </p>
+                        <p></p>
+                        <p style="text-align:left">Example 2:</p>
+                        <p>
+                            $
+                            \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
+                            \begin{bmatrix}1\\1\end{bmatrix} =
+                            \begin{bmatrix} 2+2 \\ 5-1 \end{bmatrix} =
+                            \begin{bmatrix} 4 \\ 4 \end{bmatrix} =
+                            4 \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+                            $
+                        </p>
+                        <p>
+                            So in this case [2,-5] and [1,1] are eigenvectors with eigenalues of -3 and 4 respectively
+                        </p>
+                    </section>
+                    <section>
+                        <h3>So this is kind of cool</h3>
+                        <h5>The "information" in the matrix is stretched but does not fundementally change</h5>
+                        <div class="row">
+                            <div class="col-lg-6" style="text-align:left">
+                                <p style="vertical-align:center">
+                                    The best way to think about this is that Eigenvectors help you compress information
+                                    in an [N x N] dimentional space, into a [1 x N] dementional space
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="img/Eigenvectors-extended.gif" width="500"/>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>This is the basis for how Google ranks pages</h3>
+                        <img src="img/GoogleEigenvector.png"/>
+                    </section>
+                </section>
+
+                <!-- GRAPH STUFF -->
+                <section>
+                    <section>
+                        <h2>Graph Notation</h2>
+                    </section>
+                    <section>
+                        <h3>Graphs</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>Graph</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-6">
+                                <p style="font-size:smaller">Notation</p>
+                                <p></p>
+                                <p style="font-size:smaller">
+                                <ul>
+                                    <li>$G=(V,E)$ </li>
+                                    <li>$V = \{v_{\tiny l} \mid v_{\tiny l} \in V, 1 \leq l \leq |V|\}$</li>
+                                    <li>$E = \{e_{\tiny i} = \{u,v\} \mid e_{\tiny i} \in E \land u,v \in V\}$</li>
+                                    <li>$deg(v) =  \{|\{v,e\}| \mid \forall \{v,e_{\tiny i}\}\in E \land e_{\tiny i} \in V\}$</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Graphs</h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Graph</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-8">
+                                <p style="font-size:smaller">Notation</p>
+                                <p></p>
+                                <p style="font-size:smaller">
+                                <ul>
+                                    <li>$G=(V,E)$ </li>
+                                    <li>$V = \{A, B, C, D, E\}$</li>
+                                    <li>$E = \{(A,B),(B,C),(C,D),(C,E),(D,F),(E,F)\}$</li>
+                                    <li>$deg(A)=1$</li>
+                                    <li>$deg(B,D,E,F)=2$</li>
+                                    <li>$deg(C)=3$</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Graphs</h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>Undirected Graph</p>
+                                <img src="img/sample_graph.svg"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Directed Graph</p>
+                                <img src="img/directed_sample.svg"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Directed Weighted Graph</p>
+                                <img src="img/directed_weighted_sample.svg"/>
+                            </div>
                         </div>
                     </section>
                 </section>
 
 
-				<section>
+                <section>
+                    <h3>We saw this guy before...</h3>
+                    <h4>Which node do you think is most influential?</h4>
+                    <h4>Which node do you think is least influential?</h4>
+                    <img src="img/directed_sample.svg"/>
+                </section>
+
+
+
+
+                <section>
 					<section>
 						<h2>Intuition for Page Rank</h2>
 					</section>
