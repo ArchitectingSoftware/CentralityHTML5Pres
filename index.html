@@ -766,6 +766,102 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             <p>Node C seems like it should be more influential</p>
                         </div>
                     </section>
+                    <section>
+                        <h3><span class="text-magenta">Lets check this on our undirected graph - Much Better</span></h3>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="img/sample_undirected.svg"/>
+                            </div>
+                            <div class="col-lg-8">
+                                <p style="text-align:left">So the betweeness centrality for this graph is:</p>
+                                <p style="text-align:left">[A:0, B:4; C:6, D:1.5, E:1.5, F:0]</p>
+                                <p style="text-align:left">Ordered: [C, B, (D / E), (A / F)]</p>
+                                <p></p>
+                                <p class="text-yellow" style="font-size:smaller">
+                                    Note where there are 2 or more shortest paths "credit" is split.  For example, nodes
+                                    D and E each get 1/2 because they are on equal shortest paths from C &#x2192; F
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <h3><span class="text-magenta">Summary So Far</span></h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Algorithm</th>
+                                <th>Execution</th>
+                                <th>Objective</th>
+                                <th>SE Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="font-size:smaller">
+                                <td>Degree</td>
+                                <td>O(E)</td>
+                                <td style="font-size:smaller">Max (in/out) degree most important</td>
+                                <td style="font-size:smaller">
+                                    High degree centrality can mean that a module has too much responsibility, or its
+                                    very central for a valid reason such as a library or driver.
+                                </td>
+                            </tr>
+                            <tr style="font-size:smaller">
+                                <td>Closeness</td>
+                                <td>O(V(V + E))</td>
+                                <td style="font-size:smaller">Nodes that are closer to all other nodes
+                                    are important</td>
+                                <td style="font-size:smaller">
+                                    Modules that are tightly chosesive with many other modules are important
+                                </td>
+                            </tr>
+                            <tr style="font-size:smaller">
+                                <td>Betweenness</td>
+                                <td>O(V * E)</td>
+                                <td style="font-size:smaller">Nodes that appear on many shortest paths are important</td>
+                                <td style="font-size:smaller">
+                                    Highlights nodes that "connect" the graph, high centrality is a
+                                    possible indicator of an interface to an architectural subsystem
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h3><span class="text-magenta">Other Observations</span></h3>
+                    <table>
+                        <theader>
+                            <tr>
+                                <th>Observation</th>
+                                <th>SE Implication</th>
+                            </tr>
+                        </theader>
+                        <tbody>
+                            <tr>
+                                <td style="font-size:smaller">
+                                        <p>The execution complexity for large (dense) graphs may be prohibitive</p>
+                                        <p>As a graph gets more dense $E$ approaches $V^2$</p>
+                                </td>
+                                <td style="font-size:smaller">
+                                    Sofware graphs tend to be sparse, reducing the execution complexity so its closer
+                                    to $O(V^2)$ than $O(V^3)$
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:smaller">
+                                    <p>Betwenness and Closeness measures tend to work better on undirected graphs</p>
+                                    <p>Small changes in link structure in directed graphs might have a large impact on centrality</p>
+                                </td>
+                                <td style="font-size:smaller">
+                                    Sofware graphs tend to be directed, but in many cases it's OK to treat them as
+                                    undirected.  In certain use cases the edge direction is important such as in
+                                    link analysis.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </section>
 
                 <!-- MATH REVIEW -->
