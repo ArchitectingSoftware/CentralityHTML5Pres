@@ -325,19 +325,20 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         <h1>Degree Centrality</h1>
                     </section>
                     <section>
-                        <h3>Degree Centrality</h3>
-                        <p>Measure the degree of each node</p>
+                        <h3><span class="text-magenta">Degree Centrality</span></h3>
+                        <p>Rank by the (in, out, total) degree of each node</p>
                         <img src="img/directed_sample.svg"/>
-                        <p>Degree Centrality = $[2,4,3,2,3]$.  So node B is the most influential!</p>
+                        <p class="text-yellow">Degree Centrality = $[A:2,B:4,C:3,D:2,E:3]$.  So degree centrality
+                           for this graph is [B, (C / E), (A / D)]</p>
                     </section>
                     <section>
-                        <h3>Degree Centrality - Variation  - Normalize</h3>
+                        <h3><span class="text-magenta">Normalized Degree Centrality Variation</span></h3>
                         <p>Divide by max number of Nodes (N-1)</p>
                         <img src="img/directed_sample.svg"/>
-                        <p>Degree Centrality = $\left[\frac{1}{2},1,\frac{3}{4},\frac{1}{2},\frac{3}{4}\right]$.  So node B is the most influential!</p>
+                        <p class="text-yellow">Degree Centrality = $\left[\frac{1}{2},1,\frac{3}{4},\frac{1}{2},\frac{3}{4}\right]$.  So node B is the most influential!</p>
                     </section>
                     <section>
-                        <h3>Degree Centrality - Centrality of Entire Network</h3>
+                        <h3><span class="text-magenta">Degree Centrality - Centrality of Entire Network</span></h3>
 
                         <div class="row">
                             <div class="col-lg-6"><img src="img/directed_sample.svg"/></div>
@@ -360,7 +361,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             </div>
                         </div>
 
-                        <div class="row"><p style="font-size:smaller">
+                        <div class="row text-yellow"><p style="font-size:smaller">
                             where $C_D(n^{*})$ is the maximum degree centrality and $[(N-1)(N-2)]$ represents
                             the maximum number of ways that the nodes in the graph can be connected
                         </p></div>
@@ -423,7 +424,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                     </section>
                     <section>
-                        <h3>Closeness Centrality</h3>
+                        <h3><span class="text-magenta">Closeness Centrality</span></h3>
                         <div class="row">
                             <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
@@ -449,7 +450,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                     </section>
                     <section>
-                        <h3>Closeness Centrality</h3>
+                        <h3><span class="text-magenta">Closeness Centrality</span></h3>
                         <div class="row">
                             <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
@@ -499,13 +500,13 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 text-yellow">
                                 So solution is: [C, (D / E), B, F, A]
                             </div>
                         </div>
                     </section>
                     <section>
-                        <h3>Closeness Centrality - Variation</h3>
+                        <h3><span class="text-magenta">Closeness Centrality - Variation</span></h3>
                         <div class="row">
                             <div class="col-lg-4"><img src="img/sample_undirected.svg"/></div>
                             <div class="center-block text-center col-lg-8" style="font-size:smaller">
@@ -552,7 +553,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 text-yellow">
                                 So solution is: [C, (D / E), B, F, A]
                             </div>
                         </div>
@@ -575,9 +576,9 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                 </p>
                                 <ul>
                                     <li>
-                                        First a path lenght might be <span class="text-yellow-bold">infinate</span>.
+                                        First a path lenght might be <span class="text-yellow-bold">infinite</span>.
                                         Consider if the edge (D &#x2192; B) was eliminated the path length to all other nodes
-                                        would be infinate
+                                        would be infinite
                                     </li>
                                     <li>
                                         The notion of a <span class="text-yellow-bold">shortest path</span> in a directed
@@ -599,6 +600,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             Turns out that if a distance is infinate we can use 0 for d(x,y).  Recall from calculus that
                             $\lim\limits_{x \to \infty}\frac{1}{x}=0$
                         </p>
+                        <p class="text-yellow">This is also sometimes referred to as Harmonic Centrality</p>
                     </section>
                     <section>
                         <h4><span class="text-magenta">
@@ -646,7 +648,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 text-blue">
                                 So solution is: [B, E, (A, D), C].  Seems like C is very influential, the primary
                                 reason that its being pushed down is the long path length to D
                             </div>
@@ -657,25 +659,26 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                 <!-- Betweeness Centrality -->
                 <section>
                     <section>
-                        <h1>Betweeness Centrality</h1>
+                        <h1>Betweenness Centrality</h1>
                     </section>
                     <section>
-                        <h2><span class="text-magenta">Between Centrality - Basic Idea</span></h2>
+                        <h2><span class="text-magenta">Betweenness Centrality - Basic Idea</span></h2>
                             <ol>
                                 <li>
-                                    Find shortest paths between <span class="text-yellow">all node pairs</span> in the graph
+                                    Find <span class="text-yellow">shortest paths</span> between 
+                                    <span class="text-yellow">all node pairs</span> in the graph
                                 </li>
                                 <li>
                                     Award "points" to nodes for being on each of shortest the shortest paths
                                 </li>
                                 <li>
-                                    Intuition:  Influential nodes play a more important role in
+                                    <span class="text-green">Intuition:</span>  Influential nodes play a more important role in
                                     connecting the graph together
                                 </li>
                             </ol>
                     </section>
                     <section>
-                        <h3><span class="text-magenta">Between Centrality Example</span></h3>
+                        <h3><span class="text-magenta">Betweenness Centrality Example</span></h3>
                         <p>Small(<span class="text-red">Red</span>) to Large(<span class="text-blue">Blue</span>)</p>
                         <img width="500"src="img/BetweenessWikipedia.png"/>
                     </section>
@@ -756,14 +759,14 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                 <img src="img/directed_sample.svg"/>
                             </div>
                             <div class="col-lg-8">
-                                <p style="text-align:left">So the betweeness centrality is:</p>
+                                <p style="text-align:left">So the betweenness centrality is:</p>
                                 <p style="text-align:left">[A:3, B:8; C:3, D:1, E:4]</p>
                                 <p style="text-align:left">Ordered: [B, E, (A / C), D]</p>
                             </div>
                         </div>
                         <div class="row">
                            <p> Like closeness centrality, betweenness centrality tends to work better on undirected graphs.</p>
-                            <p>Node C seems like it should be more influential</p>
+                            <p class="text-red">Node C seems like it should be more influential</p>
                         </div>
                     </section>
                     <section>
@@ -865,13 +868,32 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                     </table>
                 </section>
 
+                <section>
+                    <section>
+                        <h1>Spectrical Techniques</h1>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">Spectrical Techniques</span></h3>
+                        <ul>
+                            <li>
+                                Based on the "Eigenspaces" of certain matricies
+                            </li>
+                            <li>
+                                In order to understand we need to do a litle bit of Math review
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
                 <!-- MATH REVIEW -->
                 <section>
                     <section>
                         <h1>Math Review</h1>
+                        <h4><span class="text-yellow">Part 1: Relations, Functions and Vectors</span></h4>
+                        <p class="text-green">The Basics...</p>
                     </section>
                     <section>
-                        <h3>Relations</h3>
+                        <h3><span class="text-magenta">Relations</span></h3>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -880,15 +902,16 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                 <div class="col-lg-6">
                                     <p style="text-align:left">
                                         A relation is a mapping from values in the domain to the range.
-                                    <ul>
-                                        <li>
-                                            The elements in domain and range must be defined, in this case $\mathbb{R}$
-                                        </li>
-                                        <li>
-                                            The relation $R$ is defined as $R \subset R \times R$
-                                        </li>
-                                    </ul>
+                                        <ul>
+                                            <li>
+                                                The elements in domain and range must be defined, in this case $\mathbb{R}$
+                                            </li>
+                                            <li>
+                                                The relation $R$ is defined as $R \subset R \times R$
+                                            </li>
+                                        </ul>
                                     </p>
+                                    <p style="text-align:left" class="text-yellow">R = {(0,0),(1,2),(2,4),(3,6)}</p>
                                 </div>
                             </div>
                         </div>
@@ -921,7 +944,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                     </section>
                     <section>
-                        <h3>Now Vectors</h3>
+                        <h3><span class="text-magenta">Now Vectors</span></h3>
                         <img src="img/vectors.jpg" width="800"/>
                         <p>
                             A vector is a line in an N-Dimentional space
@@ -931,40 +954,31 @@ class Graph(vset:List[Vertex], eset:List[Edge],
 
 
 
-
-
-
-                <section data-background="#dddddd">
-                    <h3>So which node is most impportant?</h3>
-                    <p>
-                        <embed id="bunch-graph" style="width: 500px; height: 500px; border:1px solid black;" type="image/svg+xml" src="img/bunch2.svg" />
-
-                    </p>
-                </section>
-
                 <!-- Linear Transformations -->
                 <section>
                     <section>
-                        <h1>Linear Transformations</h1>
+                        <h1>Math Review</h1>
+                        <h4><span class="text-yellow">Part 2: Linear Algebra Primer</span></h4>
+                        <p class="text-green">Matrix Multiplication and Linear Transformations</p>
                     </section>
                     <section>
-                        <h3>Before we start a brief review of matrix multiplication</h3>
+                        <h3><span class="text-magenta">Before we start a brief review of matrix multiplication</></h3>
                         <p style="text-align:left">This is how to multiply a 2x2 matrix with a 1x2 vector:</p>
-                        <p>
+                        <p class="text-green">
                             $
                             \begin{bmatrix}a & b \\ c & d \end{bmatrix}
                             \begin{bmatrix}I\\S\end{bmatrix} =
                             \begin{bmatrix} aI + bS \\ cI + dS \end{bmatrix}
                             $
                         </p>
-                        <p style="text-align:left">
+                        <p style="text-align:left" class="text-yellow">
                             For the purposes of this talk we will be focusing on square matricies [NxN] multiplied by
                             [1xN] vectors.  The resultant answer will always be a [1xN] vector
                         </p>
                     </section>
                     <section>
-                        <h3>Examples</h3>
-                        <p style="text-align:left">Example 1:</p>
+                        <h3><span class="text-magenta">Examples</span></h3>
+                        <p style="text-align:left" class="text-yellow">Example 1:</p>
                         <p>
                             $
                             \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
@@ -974,7 +988,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             $
                         </p>
                         <p></p>
-                        <p style="text-align:left">Example 2:</p>
+                        <p style="text-align:left" class="text-yellow">Example 2:</p>
                         <p>
                             $
                             \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
@@ -983,12 +997,16 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             \begin{bmatrix} 4 \\ 4 \end{bmatrix}
                             $
                         </p>
-                        <p>
+                        <p class="text-green">
                             Anybody notice anything special?  More on this later
                         </p>
                     </section>
                     <section>
-                        <h3>Rotation</h3>
+                        <h2>Linear Transformatins</h2>
+                        <p class="text-green">...or using Matrix Multiplication to manipulate data in predictable ways</p>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">Rotation</span></h3>
                         <p>
                             $
                             \begin{bmatrix}\cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}
@@ -996,14 +1014,14 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             \begin{bmatrix}x' = x \cos(\theta)-y \sin(\theta)\\y' = x \sin(\theta)+y \cos(\theta)\end{bmatrix}
                             $
                         </p>
-                        <p>
+                        <p class="text-yellow">
                             In other words, point [x,y] is transformed to point [x',y'] via a rotation of $\theta$ degrees.
                             Rotation is counter-clockwise if $\theta > 0$ and clockwise if $\theta < 0$
                         </p>
                         <img src="img/rotate_transform.gif"/>
                     </section>
                     <section> <!-- reflection -->
-                        <h3>Reflection</h3>
+                        <h3><span class="text-magenta">Reflection</span></h3>
                         <div class="row">
                             <div class="col-lg-6">
                                 <p><small>
@@ -1013,7 +1031,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     \begin{bmatrix}x\\-y\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>Reflects on y axis</p>
+                                <p class="text-yellow">Reflects on y axis</p>
                             </div>
 
                             <div class="col-lg-6">
@@ -1026,10 +1044,10 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     $
                                     \begin{bmatrix} -1  & 0 \\ 0 & 1 \end{bmatrix}
                                     \begin{bmatrix}x\\y\end{bmatrix} =
-                                    \begin{bmatrix}x\\-y\end{bmatrix}
+                                    \begin{bmatrix}-x\\y\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>Reflects on x axis</p>
+                                <p class="text-yellow">Reflects on x axis</p>
                             </div>
                             <div class="col-lg-6">
                                 <img align="right" src="img/reflection2_transform.gif"/>
@@ -1041,10 +1059,10 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     $
                                     \begin{bmatrix} 0  & 1 \\ 1 & 0 \end{bmatrix}
                                     \begin{bmatrix}x\\y\end{bmatrix} =
-                                    \begin{bmatrix}x\\-y\end{bmatrix}
+                                    \begin{bmatrix}y\\x\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>Reflects in place</p>
+                                <p class="text-yellow">Reflects in place</p>
                             </div>
                             <div class="col-lg-6">
                                 <img align="right" src="img/reflection3_transform.gif"/>
@@ -1053,7 +1071,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                     </section>
 
                     <section> <!-- shear -->
-                        <h3>Shear</h3>
+                        <h3><span class="text-magenta">Shear</span></h3>
                         <div class="row">
                             <div class="col-lg-6">
                                 <p><small>
@@ -1063,7 +1081,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     \begin{bmatrix}x+ky\\y\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>shears in x direction by k units</p>
+                                <p class="text-yellow">shears in x direction by k units</p>
                             </div>
 
                             <div class="col-lg-6">
@@ -1079,7 +1097,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     \begin{bmatrix}x\\y+kx\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>shears in x direction by k units</p>
+                                <p class="text-yellow">shears in y direction by k units</p>
                             </div>
                             <div class="col-lg-6">
                                 <img style="max-width:100%; max-height:100%;" align="right" src="img/shear2_transform.gif"/>
@@ -1088,7 +1106,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                     </section>
 
                     <section> <!-- stretch -->
-                        <h3>Stretch</h3>
+                        <h3><span class="text-magenta">Stretch</span></h3>
                         <div class="row">
                             <div class="col-lg-6">
                                 <p><small>
@@ -1098,7 +1116,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     \begin{bmatrix}kx\\y\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>stretches in x direction by k units</p>
+                                <p class="text-yellow">stretches in x direction by k units</p>
                             </div>
 
                             <div class="col-lg-6">
@@ -1114,7 +1132,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     \begin{bmatrix}x\\ky\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>stretches in y direction by k units</p>
+                                <p class="text-yellow">stretches in y direction by k units</p>
                             </div>
                             <div class="col-lg-6">
                                 <img style="max-width:100%; max-height:100%;" align="right" src="img/stretchy_transform.gif"/>
@@ -1123,17 +1141,17 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                     </section>
 
                     <section> <!-- stretch -->
-                        <h3>Stretch (2)</h3>
+                        <h3><span class="text-magenta">Stretch (2)</span></h3>
                         <div class="row">
                             <div class="col-lg-6">
-                                <p><small>
+                                <p>
                                     $
                                     \begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
                                     \begin{bmatrix}x\\y\end{bmatrix} =
                                     \begin{bmatrix}kx\\ky\end{bmatrix}
                                     $
-                                </small></p>
-                                <p style="text-align:left">stretches in both directions by k units</p>
+                                </p>
+                                <p style="text-align:left" class="text-yellow">stretches in both directions by k units</p>
                             </div>
 
                             <div class="col-lg-6">
@@ -1143,7 +1161,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         <div class="row">
                             <div class="col-lg-12">
                                 <p>
-                                    What is interesting here is that this transform does not distort the image in any way, it
+                                    What is interesting here is that this transform does not distort the image! it
                                     simply scales it by a factor of $k$.
                                 </p>
                             </div>
@@ -1154,21 +1172,24 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                 <!-- explain eigenvectors -->
                 <section>
                     <section>
-                        <h1>Now with this knowledge we can get to Eigenvectors (and Eigenvalues)</h1>
+                        <h1>Math Review</h1>
+                        <h4><span class="text-yellow">Part 3: More Linear Algebra</span></h4>
+                        <p class="text-green">Eigenvectors (and Eigenvalues)</p>
                     </section>
+
                     <section>
                         <!-- stretch -->
-                        <h3>Geometrically visualizing Eigenvalues and Eigenvectors</h3>
+                        <h3><span class="text-magenta">Geometrically visualizing Eigenvalues and Eigenvectors</span></h3>
                         <div class="row">
                             <div class="col-lg-6">
-                                <p><small>
+                                <p>
                                     $
                                     \begin{bmatrix} k  & 0 \\ 0 & k \end{bmatrix}
                                     \begin{bmatrix}x\\y\end{bmatrix} =
                                     \begin{bmatrix}kx\\ky\end{bmatrix}
                                     $
-                                </small></p>
-                                <p style="text-align:left">stretches in both directions by k units</p>
+                                </p>
+                                <p class="text-yellow">Recall our stretch matrix</p>
                             </div>
 
                             <div class="col-lg-6">
@@ -1177,7 +1198,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <p>
+                                <p class="text-blue">
                                     Lets rewrite the equation sligthly by pulling out $k$:
                                 </p>
                                 <p><small>
@@ -1187,31 +1208,16 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                                     k \begin{bmatrix}x\\y\end{bmatrix}
                                     $
                                 </small></p>
-                                <p>
-                                    In this form $k$ is the eigenvalue, and $[x,y]$ is an eigenvector.  In other words an
-                                    eigenvector scales the information ecapsulated in a given square matrix by a factor of $k$
+                                <p class="text-blue">
+                                    In this form $k$ is the eigenvalue, and $[x,y]$ is an eigenvector.  <span class="text-green">In other words an
+                                    eigenvector scales the information ecapsulated in a given square matrix by a factor of $k$</span>
                                 </p>
                             </div>
                         </div>
                     </section>
                     <section>
-                        <h1>So why is this so interesting?</h1>
-                    </section>
-                    <section>
-                        <h3>Lets look at the equation for determinnig an eigenvector</h3>
-                        <p></p>
-                        <p>
-                            $A \vec{v} = \lambda \vec{v} $
-                        </p>
-                        <p>
-                            So given a square matrix $A$ and a vector $\vec{v}$ we need to dermine if such a $\vec{v}$
-                            exists that soles this equation.  If so, $\lambda$ is the eigenvector that scales $\vec{v}$
-                            which is the eigenvector.
-                        </p>
-                    </section>
-                    <section>
-                        <h3>Recall our Matrix Multiplication Example</h3>
-                        <p style="text-align:left">Example 1:</p>
+                        <h3><span class="text-magenta">Recall our Matrix Multiplication Example</span></h3>
+                        <p style="text-align:left" class="text-yellow">Example 1:</p>
                         <p>
                             $
                             \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
@@ -1222,7 +1228,7 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                             $
                         </p>
                         <p></p>
-                        <p style="text-align:left">Example 2:</p>
+                        <p style="text-align:left" class="text-yellow">Example 2:</p>
                         <p>
                             $
                             \begin{bmatrix}2 & 2 \\ 5 & -1 \end{bmatrix}
@@ -1237,12 +1243,16 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </p>
                     </section>
                     <section>
-                        <h3>So this is kind of cool</h3>
+                        <h1>So why is this so interesting?</h1>
+                    </section>
+                    <section>
+                        <h3><span class="text-magenta">So this is kind of cool</span></h3>
                         <h5>The "information" in the matrix is stretched but does not fundementally change</h5>
                         <div class="row">
                             <div class="col-lg-6" style="text-align:left">
-                                <p style="vertical-align:center">
-                                    The best way to think about this is that Eigenvectors help you compress information
+                                <p style="vertical-align:center" class="text-yellow">
+                                    The best way to think about this is that Eigenvectors enable you 
+                                    to <span class="text-red">compress information</span>
                                     in an [N x N] dimentional space, into a [1 x N] dementional space
                                 </p>
                             </div>
@@ -1252,78 +1262,17 @@ class Graph(vset:List[Vertex], eset:List[Edge],
                         </div>
                     </section>
                     <section>
-                        <h3>This is the basis for how Google ranks pages</h3>
-                        <img src="img/GoogleEigenvector.png"/>
-                    </section>
-                </section>
-
-                <!-- GRAPH STUFF -->
-                <section>
-                    <section>
-                        <h2>Graph Notation</h2>
-                    </section>
-                    <section>
-                        <h3>Graphs</h3>
                         <div class="row">
                             <div class="col-lg-6">
-                                <p>Graph</p>
-                                <img src="img/sample_graph.svg"/>
+                                <img style="border:5px solid yellow" src="img/GoogleEigenvector.png"/>
                             </div>
                             <div class="col-lg-6">
-                                <p style="font-size:smaller">Notation</p>
-                                <p></p>
-                                <p style="font-size:smaller">
-                                <ul>
-                                    <li>$G=(V,E)$ </li>
-                                    <li>$V = \{v_{\tiny l} \mid v_{\tiny l} \in V, 1 \leq l \leq |V|\}$</li>
-                                    <li>$E = \{e_{\tiny i} = \{u,v\} \mid e_{\tiny i} \in E \land u,v \in V\}$</li>
-                                    <li>$deg(v) =  \{|\{v,e\}| \mid \forall \{v,e_{\tiny i}\}\in E \land e_{\tiny i} \in V\}$</li>
-                                </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Graphs</h3>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p>Graph</p>
-                                <img src="img/sample_graph.svg"/>
-                            </div>
-                            <div class="col-lg-8">
-                                <p style="font-size:smaller">Notation</p>
-                                <p></p>
-                                <p style="font-size:smaller">
-                                <ul>
-                                    <li>$G=(V,E)$ </li>
-                                    <li>$V = \{A, B, C, D, E\}$</li>
-                                    <li>$E = \{(A,B),(B,C),(C,D),(C,E),(D,F),(E,F)\}$</li>
-                                    <li>$deg(A)=1$</li>
-                                    <li>$deg(B,D,E,F)=2$</li>
-                                    <li>$deg(C)=3$</li>
-                                </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Graphs</h3>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p>Undirected Graph</p>
-                                <img src="img/sample_graph.svg"/>
-                            </div>
-                            <div class="col-lg-4">
-                                <p>Directed Graph</p>
-                                <img src="img/directed_sample.svg"/>
-                            </div>
-                            <div class="col-lg-4">
-                                <p>Directed Weighted Graph</p>
-                                <img src="img/directed_weighted_sample.svg"/>
+                                <h3>We will see shortly that is the basis for how Google ranks pages</h3>
                             </div>
                         </div>
                     </section>
                 </section>
+
 
 
                 <section>
@@ -1337,11 +1286,12 @@ class Graph(vset:List[Vertex], eset:List[Edge],
 
 
                 <section>
+                    <section>
+                        <h1>Spectral Techniques</h1>
+                        <h3><span class="text-green">Eigenvector Centrality - the basis for PageRank</span></h3>
+                    </section>
 					<section>
-						<h2>Intuition for Page Rank</h2>
-					</section>
-					<section>
-						<h3>Directed Graph Example</h3>
+						<h3><span class="text-magenta">Directed Graph Example</span></h3>
 						<div class="row">
 							<div class="col-lg-6">
 								<p>Graph</p>
@@ -1363,9 +1313,12 @@ class Graph(vset:List[Vertex], eset:List[Edge],
 								</p>
 							</div>
 						</div>
+                        <div class="row text-yellow">
+                            Lets see what happens if we calculate the Eigenvetor on this matrix?
+                        </div>
 					</section>
 					<section>
-						<h3>Directed Graph Example - Eigenvectors</h3>
+						<h3><span class="text-magenta">Directed Graph Example - Eigenvectors</span></h3>
 						<div class="row">
 							<div class="col-lg-6">
 								<p>Graph</p>
@@ -1390,39 +1343,46 @@ class Graph(vset:List[Vertex], eset:List[Edge],
 						</div>
 						<div class="row">
 							<div class="col-lg-12">
-								<p style="text-size:smaller">
-									We see that the relitive ranking is $[C,B,A,E,D]$ - seems to make sense,
-									but $B$ does look a little more central / important (to me at least)
+								<p style="text-size:smaller" class="text-yellow">
+									The relitive ranking is $[C,B,A,E,D]$ - seems to make sense,
+									but $B$ does look a little more central / important!
 								</p>
 							</div>
 						</div>
 					</section>
 					<section>
-						<h3>Directed Graph Example - Transition Matrix</h3>
+						<h3><span class="text-magenta">Directed Graph Example</span></h3>
+                        <p>Lets introduce the Transition Matrix</p>
 						<div class="row">
 							<div class="col-lg-6">
 								<p>Graph</p>
-								<img src="img/directed_sample.svg"/>
 							</div>
 							<div class="col-lg-6">
-								<p style="font-size:smaller">Adjacency Matrix (x:From, y:To)</p>
-								<p></p>
-								<p>
-									$
-									\begin{bmatrix}
-									0 & 0 & 1 & 0 & 0 \\
-									1 & 0 & 0 & 1 & 0 \\
-									0 & \frac{1}{2}  & 0 & 0 & \frac{1}{2}  \\
-									0 & 0 & 0 & 0 & \frac{1}{2}  \\
-									0 & \frac{1}{2}  & 0 & 0 & 0
-									\end{bmatrix}
-									$
-								</p>
+								<p style="font-size:smaller">Transition Matrix (x:From, y:To)</p>
 							</div>
 						</div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="img/directed_sample.svg"/>
+                            </div>
+                            <div class="col-lg-6">
+                                $
+                                \begin{bmatrix}
+                                0 & 0 & 1 & 0 & 0 \\
+                                1 & 0 & 0 & 1 & 0 \\
+                                0 & \frac{1}{2}  & 0 & 0 & \frac{1}{2}  \\
+                                0 & 0 & 0 & 0 & \frac{1}{2}  \\
+                                0 & \frac{1}{2}  & 0 & 0 & 0
+                                \end{bmatrix}
+                                $
+                            </div>
+                        </div>
+                        <div class="row text-yellow">
+                            Lets see what the eigenvector of this matrix looks like?
+                        </div>
 					</section>
 					<section>
-						<h3>Directed Graph Example - Eigenvectors</h3>
+						<h3><span class="text-magenta">Directed Graph Example - Eigenvectors</span></h3>
 						<div class="row">
 							<div class="col-lg-6">
 								<p>Graph</p>
@@ -1447,9 +1407,9 @@ class Graph(vset:List[Vertex], eset:List[Edge],
 						</div>
 						<div class="row">
 							<div class="col-lg-12">
-								<p style="text-size:smaller">
-									We see that the relitave ranking is now $[B,C,A,E,D]$ - makes more sense
-									$B$ seems more central, the rest of the ranking orders are the same
+								<p style="text-size:smaller" class="text-yellow">
+									We see that the relitave ranking is now $[B,C,A,E,D]$.  This makes more sense
+									since $B$ is now the most central!
 								</p>
 							</div>
 						</div>
